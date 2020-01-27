@@ -1,8 +1,18 @@
+<?php
+session_start();
+require("./inc/connection.php");
+
+// todo $query = "SELECT images FROM movies WHERE";
+// todo $result = mysqli_query($db,$query);
+?>
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php include("./inc/header.php"); ?> <!-Includes basic header->
+    <?php 
+        include("./inc/header.php");
+    ?> <!-Includes basic header->
 
         <title>Tecbooks</title>
 </head>
