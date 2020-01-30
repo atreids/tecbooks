@@ -21,8 +21,22 @@ require("./inc/connection.php");
 
     <?php
         include("./inc/navbar.php"); //Includes universal navbar
-        include("./inc/card.php"); //cards use to display books on homepage.
     ?>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>col 1</p>
+            </div>
+            <div class="col">
+                <p>col 2</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <?php include("./inc/card.php");?>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Optional JavaScript -->
