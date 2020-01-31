@@ -1,0 +1,32 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    align-self: center;
+    margin-top:20px;
+}
+
+.btn {
+    background-color: #ebba17 ;
+    border-color: #ebba17 ;
+}
+
+.btn:hover {
+    background-color: #ebba17 ;
+    border-color: #ebba17;
+}
+
+.navbar-nav li a:hover, .navbar-nav > .active > a {
+    color: #ebba17 !important;
+  
+    
+    background-image: none !important;
+  }
+
+.navbar-nav li a:hover, .navbar-nav > .active > a:hover {
+    color: black !important;
+  
+    background-color:#ebba17 !important;
+    background-image: none !important;
+  }

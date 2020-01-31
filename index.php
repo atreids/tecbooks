@@ -21,41 +21,10 @@ require("./inc/connection.php");
 
 <body>
     <div class="content">
-        <header>
-            <div class="logo">
-                <a href="index.php"><img src="./img/logo.svg"></a>
-            </div>
-
-            <nav>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a class="navanchor active" href="#">Home</a></li>
-                    <li><a class="navanchor" href="#">Link</a></li>
-                    <li><a class="navanchor" href="#">Link</a></li>
-
-
-                    <div class="dropdown">
-                        <i class="fas fa-user-circle fa-2x drop"></i>
-                        <div class="dropdown-content">
-                            <a href="#">Sign in</a>
-                            <a href="#">Register</a>
-                        </div>
-                    </div>
-
-                </ul>
-            </nav>
-
-            <div class="search-container">
-                <form action"./inc/search.php">
-                    <input type="text" placeholder="Search..">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-        </header>
+        <?php
+            include("./inc/navbar.php");
+            echo $_SESSION['user'];
+        ?>
 
         <div class="bottom"></div>
         <div class="container">

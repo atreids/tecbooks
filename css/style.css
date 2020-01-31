@@ -14,7 +14,7 @@ body {
   border-left: 5px solid #494c4e;
   border-right: 5px solid #494c4e;
   border-bottom: 5px solid #494c4e;
-  border-top: 5px solid #0FACF3;
+  border-top: 5px solid #007BFF;
   min-height: 100vh;
 }
 
@@ -101,13 +101,13 @@ nav {
 
 .navanchor {
   display: block;
-  color: #494c4e;
+  color: black;
   text-decoration: none;
   padding: 14px 25px;
 }
 
 .active {
-  background-color: #0FACF3;
+  background-color: #007BFF;
   border-radius: 10px 20px;
 }
 
@@ -115,9 +115,9 @@ nav {
   -webkit-transition: border-bottom 0.05s;
   -webkit-transition: border-bottom 0.08s;
   transition: border-bottom 0.08s;
-  color: #494c4e;
+  color: black;
   text-decoration: none;
-  border-bottom: 3px solid #0FACF3;
+  border-bottom: 5px solid #007BFF;
 }
 
 .search-container form input[type=text] {
@@ -152,7 +152,7 @@ nav {
 }
 
 .search-container button:hover {
-  background: #0FACF3;
+  background: #007BFF;
 }
 
 .drop {
@@ -170,7 +170,11 @@ nav {
 }
 
 .dropdown-content a:hover {
-  background-color: #0FACF3;
+  background-color: #007BFF;
+}
+
+.dropdown-content a:hover .fa-user-circle {
+  color: #007BFF;
 }
 
 .dropdown-content a {
@@ -194,7 +198,7 @@ nav {
 }
 
 .fa-user-circle:hover {
-  color: #0FACF3;
+  color: #007BFF;
 }
 
 .bottom {

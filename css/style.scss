@@ -5,7 +5,7 @@
 }
 
 $green: #08A045;
-$blue: #0FACF3;
+$blue: #007BFF;
 $textgray: #494c4e;
 
 html {
@@ -79,7 +79,7 @@ nav {
 
 .navanchor {
     display: block;
-    color: $textgray;
+    color: black;
     text-decoration: none;
     padding: 14px 25px;
 }
@@ -92,9 +92,9 @@ nav {
 .navanchor:hover {
     -webkit-transition: border-bottom 0.05s;
     transition: border-bottom 0.08s;
-    color: $textgray;
+    color: black;
     text-decoration: none;
-    border-bottom: 3px solid $blue;
+    border-bottom: 5px solid $blue;
 }
 
 .search-container form input[type=text] {
@@ -141,6 +141,10 @@ nav {
 
 .dropdown-content a:hover {
     background-color: $blue;
+
+    .fa-user-circle {
+        color: $blue;
+    }
 }
 
 .dropdown-content a {
