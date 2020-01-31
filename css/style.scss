@@ -4,38 +4,173 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: libre baskerville, Georgia, serif;
+$green: #08A045;
+$blue: #0FACF3;
+$textgray: #494c4e;
+
+html {
     color: #494c4e;
+    font-family: libre baskerville, Georgia, serif;
+}
+
+body {
+    border-left: 5px solid #494c4e;
+    border-right: 5px solid #494c4e;
+    border-bottom: 5px solid #494c4e;
+    border-top: 5px solid $blue;
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+.content {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+header {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
     height: 10vh;
-    background: #5b78c7;
+}
+
+.logo img {
+    height: 10vh;
+    display: inline-block;
 }
 
 .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    list-style: none;
-    width: 50%;
-    height: 100%;
     justify-content: space-around;
     align-items: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
     margin-left: auto;
 }
 
-.nav-links li a {
-    color: white;
+.navanchor {
+    display: block;
+    color: $textgray;
     text-decoration: none;
-    font-size: 16px;
+    padding: 14px 25px;
 }
 
-.nav-links li a:hover {
+.active {
+    background-color: $blue;
+    border-radius: 10px 20px;
+}
+
+.navanchor:hover {
     -webkit-transition: border-bottom 0.05s;
-    transition: border-bottom 0.05s;
-    border-bottom: 3px solid #f77f00;
+    transition: border-bottom 0.08s;
+    color: $textgray;
+    text-decoration: none;
+    border-bottom: 3px solid $blue;
+}
+
+.search-container form input[type=text] {
+    padding: 6px;
+    font-size: 17px;
+    border: 2px solid $textgray;
+    border-radius: 3px;
+}
+
+.search-container form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-left: 3px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: $blue;
+}
+
+.drop {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a:hover {
+    background-color: $blue;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.col {
+    text-align: center;
+}
+
+.fa-user-circle {
+    display: block;
+    padding: 14px 25px;
+}
+
+.fa-user-circle:hover {
+    color: $blue;
+}
+
+.bottom {
+    background-color: $textgray;
+    height: 1px;
+    width: 100vw;
 }
 
 
@@ -43,14 +178,9 @@ nav {
     .line {
         width: 30px;
         height: 3px;
-        background: white;
+        background: $textgray;
         margin: 5px;
         border-radius: 1px;
-    }
-
-    nav {
-        position: relative;
-        z-index: 2;
     }
 
     .hamburger {
@@ -62,9 +192,24 @@ nav {
         z-index: 2;
     }
 
+
+
+
+    nav {
+        position: relative;
+        z-index: 2;
+    }
+
+
+    .hamburger:hover {
+        .line {
+            background: black;
+        }
+    }
+
     .nav-links {
         position: fixed;
-        background: #5b78c7;
+        background: $green;
         height: 100vh;
         width: 100%;
         flex-direction: column;
@@ -72,12 +217,16 @@ nav {
         -webkit-clip-path: circle(100px at 90% -10%);
         transition: all 1s ease-out;
         pointer-events: none;
+
     }
 
     .nav-links.open {
-        clip-path: circle(1400px at 90% -10%);
-        -webkit-clip-path: circle(1400px at 90% -10%);
+        clip-path: circle(1500px at 90% -10%);
+        -webkit-clip-path: circle(1500px at 90% -10%);
         pointer-events: all;
+        min-height: 100vh;
+        min-width: 100vw;
+
     }
 
     .nav-links li {
