@@ -13,15 +13,25 @@ require("./inc/connection.php");
     <?php 
         include("./inc/header.php");
     ?> <!-Includes basic header->
-
+        <link rel="stylesheet" href="./css/style.css">
         <title>Tecbooks</title>
 </head>
 
 <body>
+    <nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
 
-    <?php
-        include("./inc/navbar.php"); //Includes universal navbar
-    ?>
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -38,7 +48,7 @@ require("./inc/connection.php");
         </div>
     </div>
 
-
+    <script src="./js/nav-mobile.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
