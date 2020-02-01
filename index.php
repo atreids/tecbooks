@@ -20,9 +20,9 @@ require("./inc/connection.php");
 </head>
 
 <body>
-    <nav>
+    <nav class="shadow">
         <a href="index.php" class="logo">Tecbooks</a>
-        <a href="#" class="nav-link">Link</a>
+        <input type="text" class="search" placeholder="Search..">
         <a href="#" class="nav-link">Link</a>
         <a href="#" class="nav-link">Link</a>
         <a href="#" class="nav-link">Link</a>
@@ -60,6 +60,10 @@ require("./inc/connection.php");
             </div>
         </div>
     </div>
+    <footer class="center-text">
+        <p id="footer">Tecbooks wholely owned by TecBooks Ltd &#169; | <a class="sm-link" href="contactus">Contact
+                Us</a></p>
+    </footer>
 </body>
 
 </html>
