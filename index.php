@@ -1,110 +1,65 @@
 <?php
 session_start();
 require("./inc/connection.php");
-
-// todo $query = "SELECT images FROM movies WHERE";
-// todo $result = mysqli_query($db,$query);
+#This PHP starts the session when the page is loaded and includes the connection to the database
 ?>
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php 
-        include("./inc/header.php");
-    ?> <!-Includes basic header->
-        <script src="https://kit.fontawesome.com/6c30bf13b8.js" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Tecbooks</title>
+    <!--font awesome script for icons-->
+    <script src="https://kit.fontawesome.com/6c30bf13b8.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Martel+Sans|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Tecbooks</title>
 </head>
 
 <body>
-    <div class="content">
-        <?php
-            include("./inc/navbar.php");
-            echo $_SESSION['user'];
-        ?>
+    <nav>
+        <a href="index.php" class="logo">Tecbooks</a>
+        <a href="#" class="nav-link">Link</a>
+        <a href="#" class="nav-link">Link</a>
+        <a href="#" class="nav-link">Link</a>
+        <a href="#" class="nav-link">Link</a>
+    </nav>
+    <div id="para1" class="img-1 parrallax center-text med-height">
+        <span id="lander">Books for nerds</br> By nerds</span>
+    </div>
 
-        <div class="bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1>main landing</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <h1>col 1</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Nisl nunc mi ipsum faucibus. Fringilla urna porttitor rhoncus
-                        dolor purus. Elit sed vulputate mi sit amet mauris. Gravida quis blandit turpis cursus in hac
-                        habitasse platea dictumst. Arcu risus quis varius quam quisque id diam vel. Nisl condimentum id
-                        venenatis a. Ac turpis egestas integer eget aliquet nibh. Massa enim nec dui nunc mattis.
-                        Pharetra convallis posuere morbi leo urna molestie. Semper eget duis at tellus at urna
-                        condimentum. Nisl nunc mi ipsum faucibus vitae aliquet. Sem et tortor consequat id porta nibh
-                        venenatis cras. Aliquet porttitor lacus luctus accumsan tortor posuere. At urna condimentum
-                        mattis pellentesque id nibh tortor id aliquet. Eget lorem dolor sed viverra ipsum nunc aliquet
-                        bibendum. Id donec ultrices tincidunt arcu non sodales neque.
-
-                        Lacus viverra vitae congue eu consequat. Feugiat scelerisque varius morbi enim. Quam quisque id
-                        diam vel quam elementum pulvinar. Aliquam etiam erat velit scelerisque in dictum. Cras pulvinar
-                        mattis nunc sed blandit libero. A diam sollicitudin tempor id eu nisl nunc mi. Porttitor lacus
-                        luctus accumsan tortor. Pellentesque dignissim enim sit amet venenatis urna cursus eget.
-                        Suspendisse interdum consectetur libero id faucibus nisl. Consectetur adipiscing elit duis
-                        tristique sollicitudin nibh. Sed libero enim sed faucibus turpis in eu. In nibh mauris cursus
-                        mattis molestie a iaculis. Aliquam id diam maecenas ultricies mi eget mauris pharetra. Proin
-                        fermentum leo vel orci porta non pulvinar neque laoreet. Commodo odio aenean sed adipiscing diam
-                        donec adipiscing. Accumsan tortor posuere ac ut consequat semper viverra. Sit amet tellus cras
-                        adipiscing enim eu turpis egestas pretium. Volutpat lacus laoreet non curabitur. Posuere lorem
-                        ipsum dolor sit. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit.</p>
-                </div>
-                <div class="col">
-                    <h1>col 2</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Nisl nunc mi ipsum faucibus. Fringilla urna porttitor rhoncus
-                        dolor purus. Elit sed vulputate mi sit amet mauris. Gravida quis blandit turpis cursus in hac
-                        habitasse platea dictumst. Arcu risus quis varius quam quisque id diam vel. Nisl condimentum id
-                        venenatis a. Ac turpis egestas integer eget aliquet nibh. Massa enim nec dui nunc mattis.
-                        Pharetra convallis posuere morbi leo urna molestie. Semper eget duis at tellus at urna
-                        condimentum. Nisl nunc mi ipsum faucibus vitae aliquet. Sem et tortor consequat id porta nibh
-                        venenatis cras. Aliquet porttitor lacus luctus accumsan tortor posuere. At urna condimentum
-                        mattis pellentesque id nibh tortor id aliquet. Eget lorem dolor sed viverra ipsum nunc aliquet
-                        bibendum. Id donec ultrices tincidunt arcu non sodales neque.
-
-                        Lacus viverra vitae congue eu consequat. Feugiat scelerisque varius morbi enim. Quam quisque id
-                        diam vel quam elementum pulvinar. Aliquam etiam erat velit scelerisque in dictum. Cras pulvinar
-                        mattis nunc sed blandit libero. A diam sollicitudin tempor id eu nisl nunc mi. Porttitor lacus
-                        luctus accumsan tortor. Pellentesque dignissim enim sit amet venenatis urna cursus eget.
-                        Suspendisse interdum consectetur libero id faucibus nisl. Consectetur adipiscing elit duis
-                        tristique sollicitudin nibh. Sed libero enim sed faucibus turpis in eu. In nibh mauris cursus
-                        mattis molestie a iaculis. Aliquam id diam maecenas ultricies mi eget mauris pharetra. Proin
-                        fermentum leo vel orci porta non pulvinar neque laoreet. Commodo odio aenean sed adipiscing diam
-                        donec adipiscing. Accumsan tortor posuere ac ut consequat semper viverra. Sit amet tellus cras
-                        adipiscing enim eu turpis egestas pretium. Volutpat lacus laoreet non curabitur. Posuere lorem
-                        ipsum dolor sit. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit.</p>
-                </div>
+    <div class="container books">
+        <div class="inner-container">
+            <div class="card book">
+                <div class="placeholder-img"></div>
+                <p>Author: Here</p>
+                <p>ISBN: Here</p>
+                <p>Price: Here</p>
+                <button class="btn-book opacity-low">Add to Cart</button>
             </div>
         </div>
     </div>
 
-    <script src="./js/nav-mobile.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
+    <div id="para2" class="img-2 parrallax short-height">
+    </div>
+
+    <div class="container story">
+        <div class="inner-container story flex flow-right flex-even flex-nowrap">
+            <div class="col">
+                <h2>Our Mission:</h2>
+                <p>We are a small, family-owned, independent bookstore based out of Edinburgh, Scotland.
+                    We hope to inspire the world to read, from our small cosy shop just off of Edinburgh's historic
+                    royal mile.
+                </p>
+            </div>
+            <div class="col">
+                <img src="./img/bookstore.jpg" class="parrallelogram sm-img">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
