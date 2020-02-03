@@ -11,7 +11,7 @@ if ($email == $row1['email'] and password_verify($pass,$row1['hashed_pass'])) {
     session_start();
     $_SESSION['user_id'] = $row1['customer_id'];
     $_SESSION['user_name'] = $row1['firstname'];
-    if ($checkadmin['usertype'] == "1") {
+    if ($row1['user_type'] == "1") {
         $_SESSION['login'] = "admin";
         header("location: ../index.php");
     }else {

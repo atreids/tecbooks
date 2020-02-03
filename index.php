@@ -21,7 +21,7 @@ include("./inc/connection.php");
         <span id="lander">Books for nerds</br> By nerds</span>
     </div>
 
-    <div class="container books">
+    <div class="container redbackground book-display">
         <div class="inner-container">
             <div class="card book">
                 <div class="placeholder-img"></div>
@@ -36,10 +36,10 @@ include("./inc/connection.php");
     <div id="para2" class="img-2 parrallax short-height">
     </div>
 
-    <div class="container story">
-        <div class="inner-container story flex flow-right flex-even flex-nowrap">
+    <div class="container navybackground">
+        <div class="inner-container navybackground med-height">
             <div class="col">
-                <h2>Our Mission:</h2>
+                <h3>Our Mission:</h3>
                 <p>We are a small, family-owned, independent bookstore based out of Edinburgh, Scotland.
                     We hope to inspire the world to read, from our small cosy shop just off of Edinburgh's historic
                     royal mile.

@@ -35,6 +35,10 @@ li {
   font-weight: 800;
 }
 
+h3 {
+  font-size: 2em;
+}
+
 /*nav bar css */
 nav {
   position: sticky;
@@ -45,7 +49,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 6vh;
+  height: 5vh;
   background-color: $spacecadet;
   text-align: center;
   z-index: 2;
@@ -75,6 +79,7 @@ nav {
 
 .nav-link:hover {
   color: $text2;
+  padding: 0px 20px;
   border-bottom: 2px solid $text2;
 }
 
@@ -85,7 +90,7 @@ nav {
   display: block;
   padding: 10px 20px;
   font-size: 32px;
-  transition: 0.2s;
+  transition: 100ms;
 }
 
 .logo:hover {
@@ -94,37 +99,54 @@ nav {
 
 .container {
   display: flex;
+  justify-content: center;
   flex-flow: row wrap;
 }
 
-.books {
+.redbackground {
   background-color: $red;
+  color: $text1;
+}
+
+.book-display {
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100vh;
+  height: 95vh;
+}
+
+.border-red {
+  width: 100%;
+  height: 2px;
+  background-color: $red;
+}
+
+.btn-list {
+  list-style-type: none;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 12px 15px;
+  cursor: pointer;
+  margin: 4px;
+  border: 2px solid $red;
+}
+
+.btn-active {
+  border: 2px solid $text1;
+  background-color: $red;
+}
+
+.btn:hover {
+  border: 2px solid $text1;
+  background-color: $red;
 }
 
 .inner-container {
-  padding-top: 3vh;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.flex {
+  padding: 1%;
   display: flex;
-}
-
-.flow-right {
-  flex-direction: row;
-}
-
-.flex-even {
   justify-content: space-between;
-}
-
-.flow-nowrap {
-  flex-wrap: nowrap;
-  overflow: hidden;
+  align-items: center;
 }
 
 footer {
@@ -148,12 +170,12 @@ footer {
 }
 
 .card {
-  color: $text1;
+  color: black;
   padding: 6px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  background-color: $spacecadet;
+  background-color: $text1;
 
   -webkit-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
@@ -162,8 +184,8 @@ footer {
 
 .search {
   color: $text1;
-  width: 30vw;
-  padding: 12px 24px;
+  width: 20vw;
+  padding: 8px 20px;
   background-color: transparent;
   transition: transform 250ms ease-in-out;
   font-size: 14px;
@@ -186,7 +208,7 @@ footer {
 }
 
 .search:focus {
-  padding: 12px 0;
+  padding: 5px 0;
   outline: 0;
   border: 1px solid transparent;
   border-bottom: 2px solid $red;
@@ -195,7 +217,7 @@ footer {
 }
 
 .search:hover {
-  padding: 12px 0;
+  padding: 5px 0;
   outline: 0;
   border: 1px solid transparent;
   border-bottom: 2px solid $red;
@@ -226,6 +248,10 @@ footer {
   background-image: url("../img/assortedbooks.jpg");
 }
 
+.img-3 {
+  background-image: url("../img/reading.jpg")
+}
+
 .short-height {
   min-height: 50vh;
 }
@@ -234,11 +260,19 @@ footer {
   min-height: 70vh;
 }
 
+.vsm-img {
+  max-width: 20vw;
+}
+
 .sm-img {
   max-width: 35vw;
 }
 
-.story {
+.med-img {
+  max-width: 45vw;
+}
+
+.navybackground {
   color: $text1;
   background: $spacecadet;
 }
@@ -256,6 +290,10 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
 }
 
 .opacity-low {
@@ -290,10 +328,9 @@ h1 {
 }
 
 .col {
-  min-height: 40vh;
-  max-width: 25vw;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  height: auto;
+  width: auto;
+  max-width: 30vw;
 }
 
 .parrallelogram {
@@ -330,6 +367,14 @@ h1 {
 @media screen and (max-width: 768px) {
   #lander {
     display: none;
+  }
+
+  .col {
+    max-width: 100vw;
+  }
+
+  .inner-container {
+    flex-direction: column;
   }
 
   .row {
