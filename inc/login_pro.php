@@ -3,18 +3,15 @@ include("../inc/connection.php");
 
 $email = $_POST['email'];
 $pass = $_POST['password'];
-$hashed_pass = password_hash($pass, PASSWORD_BCRYPT);
-$query = "SELECT * FROM Customers WHERE email = '$email' AND hashed_pass = '$hashed_pass'";
-$result = mysqli_query($db,$query);
+$query1 = "SELECT * FROM customers WHERE email = '$email'";
+$result = mysqli_query($db,$query1);
+$row1 = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
-if (mysqli_num_rows($result) == 1) {
+if ($email == $row1['email'] and password_verify($pass,$row1['hashed_pass'])) {
     session_start();
-    $query3 = "SELECT firstname FROM Customers WHERE email = '$email'";
-    $_SESSION['user'] = mysqli_query($db,$query3);
-    $query2 = "SELECT user_type FROM Customers WHERE email = '$email'";
-    $result2 = mysqli_query($db,$query2);
-    $row = mysqli_fetch_array($result2,MYSQLI_ASSOC);
-    if ($row['usertype'] == "1") {
+    $_SESSION['user_id'] = $row1['customer_id'];
+    $_SESSION['user_name'] = $row1['firstname'];
+    if ($checkadmin['usertype'] == "1") {
         $_SESSION['login'] = "admin";
         header("location: ../index.php");
     }else {

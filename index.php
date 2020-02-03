@@ -1,27 +1,22 @@
+<?php
+session_start();
+include("./inc/connection.php");
+?>
+
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--font awesome script for icons-->
-    <script src="https://kit.fontawesome.com/6c30bf13b8.js" crossorigin="anonymous"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Martel+Sans|Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <?php include("./inc/header.php");?>
+    <!-- Includes universal header -->
     <title>Tecbooks</title>
 </head>
 
 <body>
-    <nav class="shadow">
-        <a href="index.php" class="logo">Tecbooks</a>
-        <input type="text" class="search" placeholder="Search..">
-        <a href="#" class="nav-link">Link</a>
-        <a href="#" class="nav-link">Link</a>
-        <a href="#" class="nav-link">Link</a>
-    </nav>
+    <?php include("./inc/navbar.php");?>
+    <!-- Includes universal navbar -->
+
     <div id="para1" class="img-1 parrallax center-text med-height">
         <span id="lander">Books for nerds</br> By nerds</span>
     </div>
@@ -55,10 +50,8 @@
             </div>
         </div>
     </div>
-    <footer class="center-text">
-        <p id="footer">Tecbooks wholely owned by TecBooks Ltd &#169; | <a class="sm-link" href="contactus">Contact
-                Us</a></p>
-    </footer>
+    <?php include("./inc/footer.php");?>
+    <!-- Includes universal footer -->
 </body>
 
 </html>

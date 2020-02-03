@@ -23,7 +23,7 @@ if (mysqli_num_rows($result)>0) {
         die ('Error: ' .mysqli_error($db));
     }
     $_SESSION['login'] = 'member';
-    $_SESSION['user'] = $fname;
+    $_SESSION['user_name'] = $fname;
     header("location: ../index.php");
 }
 ?>
