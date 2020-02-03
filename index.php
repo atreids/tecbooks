@@ -1,8 +1,3 @@
-<?php
-session_start();
-require("./inc/connection.php");
-#This PHP starts the session when the page is loaded and includes the connection to the database
-?>
 <!doctype html>
 <html lang="en">
 
