@@ -1,10 +1,14 @@
 <?php
 session_start();
-require("./inc/connection.php");
+include("./inc/connection.php");
 
 if(!isset($_SESSION['login'])){
     header("location: ./index.php");
 }
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 
 <!doctype html>
@@ -36,15 +40,42 @@ if(!isset($_SESSION['login'])){
     <div class="container navybackground">
         <div class="inner-container med-height navybackground">
             <div class="col">
+                <h3>View Account:</h3>
+                <ul class="btn-list">
+                    <li id="vdetails" class="btn" onclick="loadDoc('./inc/displayDetails.php', v_accountDetails)">
+                        View Your Details</li>
+                    <li id="vaddresses" class="btn" onclick="loadDoc('./inc/displayAddresses.php', v_addressDetails)">
+                        View Your Addresses</li>
+                    <li id="vpayments" class="btn" onclick="loadDoc('./inc/displayPayments.php', v_paymentDetails)">
+                        View Payment Methods</li>
+                </ul>
                 <h3>Edit details:</h3>
                 <ul class="btn-list">
-                    <li class="btn btn-active">Update Details</li>
-                    <li class="btn">Update Payment</li>
-                    <li class="btn">Update Addresses</li>
+                    <li id="details" class="btn" onclick="loadDoc('./inc/updatedetails.php', accountDetails)">
+                        Update Details</li>
+                    <li id="addresses" class="btn" onclick="loadDoc('./inc/updateAddress.php', addressDetails)">
+                        Update Addresses</li>
+                    <li id="payments" class="btn" onclick="loadDoc('./inc/updatePayments.php', paymentDetails)">
+                        Update Payment</li>
+
                 </ul>
             </div>
-            <div class="col">
-                Insert details here
+            <div class="col" id="ajax">
+                <?php
+                    $user_id = $_SESSION['user_id'];
+                    $query = "SELECT firstname, surname, email FROM Customers WHERE customer_id = '$user_id'";
+                    $result = mysqli_query($db,$query);
+                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                    
+                    echo "<table>
+                    <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    </tr>";
+                    echo "<tr><td>" .$row['firstname'] . " " . $row['surname'] . "</td>
+                            <td>" . $row['email'] . "</td>
+                    </tr></table>";
+                ?>
             </div>
         </div>
     </div>
@@ -64,6 +95,8 @@ if(!isset($_SESSION['login'])){
             </div>
         </div>
     </div>
+
+    <script src="./js/account.js"></script>
     <?php include("./inc/footer.php");?>
     <!-- Includes universal footer -->
 </body>

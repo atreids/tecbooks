@@ -8,6 +8,7 @@ $text2: #e63946;
 /*General CSS */
 
 * {
+  max-width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,7 +49,7 @@ nav {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 5vh;
   background-color: $spacecadet;
   text-align: center;
@@ -98,6 +99,7 @@ nav {
 }
 
 .container {
+  width: 100vw;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -115,7 +117,7 @@ nav {
 }
 
 .border-red {
-  width: 100%;
+  width: 99vw;
   height: 2px;
   background-color: $red;
 }
@@ -286,6 +288,7 @@ p {
 }
 
 .parrallax {
+  width: 100vw;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
