@@ -94,7 +94,7 @@ create table Addresses(
     street_name varchar(255) NOT NULL,
     city varchar(255) NOT NULL,
     zip_postcode varchar(255) NOT NULL,
-    iso_country_code int(3) NOT NULL,
+    iso_country_code varchar(3) NOT NULL,
     primary key(address_id)
 );
 

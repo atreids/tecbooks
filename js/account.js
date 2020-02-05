@@ -33,10 +33,40 @@ function updateEmail() {
   xhttp.send();
 }
 
-function addressDetails(xhttp) {
-  document.getElementById("ajax").innerHTML = xhttp.responseText;
-  document.querySelector(".btn-active").className = "btn";
-  document.getElementById("addresses").className = "btn btn-active";
+function addAddress(xhttp) {
+  var num = document.getElementById("num").value;
+  var street = document.getElementById("street").value;
+  var city = document.getElementById("city").value;
+  var zip = document.getElementById("zip").value;
+  var iso = document.getElementById("iso").value;
+  var add_type = document.getElementById("add_type").value;
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    xhttp = new XMLHttpRequest();
+  } else {
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("ajax").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "./inc/new_address.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(
+    "num=" +
+      num +
+      "&street=" +
+      street +
+      "&city=" +
+      city +
+      "&zip=" +
+      zip +
+      "&iso=" +
+      iso +
+      "&add_type=" +
+      add_type
+  );
 }
 
 function paymentDetails(xhttp) {
