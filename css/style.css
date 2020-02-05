@@ -147,21 +147,29 @@ nav {
 }
 
 .btn {
+  font-size: 16px;
+  color: white;
+  background-color: #1d3557;
+  width: 200px;
   border-radius: 5px;
   padding: 12px 15px;
   cursor: pointer;
-  margin: 4px;
-  border: 2px solid #e63946;
+  margin: 5px;
+  border: 2px solid white;
+  -webkit-transition: 100ms;
+  transition: 100ms;
 }
 
 .btn-active {
   border: 2px solid #f1faee;
   background-color: #e63946;
+  color: white;
 }
 
 .btn:hover {
   border: 2px solid #f1faee;
   background-color: #e63946;
+  color: white;
 }
 
 .inner-container {

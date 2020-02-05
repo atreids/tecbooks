@@ -34,53 +34,44 @@ error_reporting(E_ALL);
         </div>
     </div>
 
-    <div id="para3" class="img-3 parrallax short-height">
-    </div>
-
     <div class="container navybackground">
         <div class="inner-container med-height navybackground">
             <div class="col">
-                <h3>View Account:</h3>
+                <h3>Manage Account:</h3>
                 <ul class="btn-list">
-                    <li id="vdetails" class="btn" onclick="loadDoc('./inc/displayDetails.php', v_accountDetails)">
-                        View Your Details</li>
-                    <li id="vaddresses" class="btn" onclick="loadDoc('./inc/displayAddresses.php', v_addressDetails)">
-                        View Your Addresses</li>
-                    <li id="vpayments" class="btn" onclick="loadDoc('./inc/displayPayments.php', v_paymentDetails)">
-                        View Payment Methods</li>
-                </ul>
-                <h3>Edit details:</h3>
-                <ul class="btn-list">
-                    <li id="details" class="btn" onclick="loadDoc('./inc/updatedetails.php', accountDetails)">
-                        Update Details</li>
-                    <li id="addresses" class="btn" onclick="loadDoc('./inc/updateAddress.php', addressDetails)">
-                        Update Addresses</li>
-                    <li id="payments" class="btn" onclick="loadDoc('./inc/updatePayments.php', paymentDetails)">
-                        Update Payment</li>
-
+                    <li><button id="vdetails" class="btn btn-active"
+                            onclick="loadDoc('./inc/displayDetails.php', v_accountDetails)">
+                            View Your Details</button></li>
+                    <li><button id="vaddresses" class="btn"
+                            onclick="loadDoc('./inc/displayAddresses.php', v_addressDetails)">
+                            View Your Addresses</button></li>
+                    <li><button id="vpayments" class="btn"
+                            onclick="loadDoc('./inc/displayPayments.php', v_paymentDetails)">
+                            View Payment Methods</button></li>
+                    <li><button id="delete" class="btn">Delete Account</button></li>
                 </ul>
             </div>
             <div class="col" id="ajax">
                 <?php
-                    $user_id = $_SESSION['user_id'];
-                    $query = "SELECT firstname, surname, email FROM Customers WHERE customer_id = '$user_id'";
+                    $id = $_SESSION['user_id'];
+                    $query = "SELECT firstname, surname, email FROM Customers WHERE customer_id = '$id'";
                     $result = mysqli_query($db,$query);
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     
-                    echo "<table>
-                    <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    </tr>";
-                    echo "<tr><td>" .$row['firstname'] . " " . $row['surname'] . "</td>
-                            <td>" . $row['email'] . "</td>
-                    </tr></table>";
+                    echo "Name: " . $row['firstname'] . " " . $row['surname'] . "<br>";
+                    echo "Email: " . $row['email'] . "<br>";
+                    echo '<form action="javascript:updateEmail()" method="post">';
+                    echo '<input id="newemail" class="input" type="email" placeholder="update email.." name="newemail"><br>';
+                    echo '<input type="submit" class="btn" name="submit">';
+                    echo '</form>';
+                    echo '<div class="msg"></div>';
                 ?>
             </div>
         </div>
     </div>
 
-    <div class="border-red"></div>
+    <div id="para3" class="img-3 parrallax short-height">
+    </div>
 
     <div class="container navybackground">
         <div class="inner-container med-height navybackground">
