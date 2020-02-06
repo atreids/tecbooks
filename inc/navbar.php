@@ -1,4 +1,4 @@
-<nav class="shadow">
+<nav class="nav-shadow">
     <a href="index.php" class="logo">Tecbooks</a>
     <input type="text" class="search" placeholder="Search..">
     <a href="account.php" class="nav-link">Account</a>

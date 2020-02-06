@@ -35,8 +35,8 @@ error_reporting(E_ALL);
     </div>
 
     <div class="container navybackground">
-        <div class="inner-container med-height navybackground">
-            <div class="col">
+        <div class="inner-container-wide med-height navybackground">
+            <div class="col-30 ">
                 <h3>Manage Account:</h3>
                 <ul class="btn-list">
                     <li><button id="vdetails" class="btn btn-active"
@@ -51,7 +51,7 @@ error_reporting(E_ALL);
                     <li><button id="delete" class="btn">Delete Account</button></li>
                 </ul>
             </div>
-            <div class="col" id="ajax">
+            <div class="col-70" id="ajax">
                 <?php
                     $id = $_SESSION['user_id'];
                     $query = "SELECT firstname, surname, email FROM Customers WHERE customer_id = '$id'";

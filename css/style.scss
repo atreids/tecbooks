@@ -5,8 +5,9 @@ $red: #e63946;
 $textgray: #494c4e;
 $text1: #f1faee;
 $text2: #e63946;
-/*General CSS */
 
+
+/*General CSS */
 * {
   max-width: 100%;
   margin: 0;
@@ -20,25 +21,76 @@ html {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li {
-  font-weight: 800;
+footer {
+  width: 100vw;
+  height: 5vh;
+  background-color: $queenblue;
 }
 
-h3 {
-  font-size: 2em;
+#footer {
+  color: $text1;
+  font-size: 12px;
 }
+
+/*end of general*/
+
+
+
+/*containers for content*/
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.inner-container-wide {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.col-30 {
+  height: auto;
+  width: auto;
+  max-width: 30vw;
+}
+
+.col-70 {
+  max-width: 70vw;
+  height: auto;
+  width: auto;
+}
+
+.short-height {
+  min-height: 50vh;
+}
+
+.med-height {
+  min-height: 70vh;
+}
+
+.center-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*end of containers*/
+
+
+
 
 /*nav bar css */
 nav {
@@ -56,7 +108,7 @@ nav {
   z-index: 2;
 }
 
-.shadow {
+.nav-shadow {
   -webkit-box-shadow: 0px 9px 13px -5px rgba(0, 0, 0, 0.71);
   -moz-box-shadow: 0px 9px 13px -5px rgba(0, 0, 0, 0.71);
   box-shadow: 0px 9px 13px -5px rgba(0, 0, 0, 0.71);
@@ -96,142 +148,6 @@ nav {
 
 .logo:hover {
   color: $text2;
-}
-
-.container {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-flow: row wrap;
-}
-
-.redbackground {
-  background-color: $red;
-  color: $text1;
-}
-
-.book-display {
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 95vh;
-}
-
-.border-red {
-  width: 99vw;
-  height: 2px;
-  background-color: $red;
-}
-
-.btn-list {
-  list-style-type: none;
-}
-
-.btn {
-  font-size: 16px;
-  color: white;
-  background-color: $spacecadet;
-  width: 200px;
-  border-radius: 5px;
-  padding: 12px 15px;
-  cursor: pointer;
-  margin: 5px;
-  border: 2px solid white;
-  transition: 100ms;
-}
-
-.btn-active {
-  border: 2px solid $text1;
-  background-color: $red;
-  color: white;
-}
-
-.btn:hover {
-  border: 2px solid $text1;
-  background-color: $red;
-  color: white;
-}
-
-.inner-container {
-  padding: 1%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer {
-  width: 100vw;
-  height: 5vh;
-  background-color: $queenblue;
-}
-
-.sm-link {
-  color: white;
-  text-decoration: none;
-}
-
-.sm-link:hover {
-  color: $red;
-}
-
-#footer {
-  color: $text1;
-  font-size: 12px;
-}
-
-.card {
-  color: black;
-  padding: 6px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  background-color: $text1;
-
-  -webkit-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
-  box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
-}
-
-.addresses {
-  height: auto;
-  width: auto;
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: white;
-  border: 3px solid $red;
-  margin-bottom: 2vh;
-}
-
-.address-p {
-  color: $spacecadet;
-  font-size: 14px;
-}
-
-.address-form input[type=text],
-.address-form select {
-  margin: 5px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-
-
-.address-form input[type=submit] {
-  background-color: white;
-  color: black;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.address-form input[type=submit]:hover {
-  background-color: $red;
-  color: white;
 }
 
 .search {
@@ -286,42 +202,16 @@ footer {
   background-color: $red;
 }
 
-.placeholder-img {
-  width: 200px;
-  height: 200px;
-  background-color: darkgrey;
-}
+/*end nav bar css */
 
-.img-1 {
-  background-image: url("../img/bookshelves.jpg");
-}
 
-.img-2 {
-  background-image: url("../img/assortedbooks.jpg");
-}
 
-.img-3 {
-  background-image: url("../img/reading.jpg")
-}
 
-.short-height {
-  min-height: 50vh;
-}
 
-.med-height {
-  min-height: 70vh;
-}
-
-.vsm-img {
-  max-width: 20vw;
-}
-
-.sm-img {
-  max-width: 35vw;
-}
-
-.med-img {
-  max-width: 45vw;
+/*Colors*/
+.redbackground {
+  background-color: $red;
+  color: $text1;
 }
 
 .navybackground {
@@ -329,34 +219,111 @@ footer {
   background: $spacecadet;
 }
 
+/*End colors*/
+
+
+
+
+
+
+
+
+/*Text Styling*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
 h2 {
   font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
 }
 
 p {
   font-size: 1.5em;
 }
 
-.parrallax {
-  width: 100vw;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/*End text styling*/
+
+
+
+
+/*form/button/link styling*/
+.btn-list {
+  list-style-type: none;
 }
 
-.circle {
-  clip-path: circle(50% at 50% 50%);
+.btn {
+  font-size: 16px;
+  color: white;
+  background-color: $spacecadet;
+  width: 200px;
+  border-radius: 5px;
+  padding: 12px 15px;
+  cursor: pointer;
+  margin: 5px;
+  border: 2px solid white;
+  transition: 100ms;
 }
 
-.opacity-low {
-  opacity: 0.6;
+.btn-active {
+  border: 2px solid $text1;
+  background-color: $red;
+  color: white;
 }
 
-.center-text {
+.btn:hover {
+  border: 2px solid $text1;
+  background-color: $red;
+  color: white;
+}
+
+.small-link {
+  color: white;
+  text-decoration: none;
+}
+
+.small-link:hover {
+  color: $red;
+}
+
+/*end form/button/link styling*/
+
+
+
+
+/*cards*/
+.card {
+  color: black;
+  padding: 6px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  background-color: $text1;
+
+  -webkit-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
+}
+
+.placeholder-img {
+  width: 200px;
+  height: 200px;
+  background-color: darkgrey;
 }
 
 .btn-book {
@@ -374,20 +341,33 @@ p {
   opacity: 1;
 }
 
-h1 {
-  font-size: 3em;
-  line-height: 1.5em;
-  margin-bottom: 1em;
+.opacity-low {
+  opacity: 0.6;
 }
 
-.col {
-  height: auto;
-  width: auto;
-  max-width: 30vw;
+/*end of cards*/
+
+
+
+/*parrallax css*/
+.img-1 {
+  background-image: url("../img/bookshelves.jpg");
 }
 
-.parrallelogram {
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+.img-2 {
+  background-image: url("../img/assortedbooks.jpg");
+}
+
+.img-3 {
+  background-image: url("../img/reading.jpg")
+}
+
+.parrallax {
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #lander {
@@ -399,6 +379,99 @@ h1 {
   padding: 40px 40px;
 }
 
+/*end of parrallax*/
+
+
+
+
+/*Account page specific*/
+.addresses {
+  height: auto;
+  width: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: white;
+  border: 3px solid $red;
+  margin-bottom: 2vh;
+}
+
+.address-p {
+  color: $spacecadet;
+  font-size: 14px;
+}
+
+.address-form input[type=text],
+.address-form select {
+  margin: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+
+.address-form input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.address-form input[type=submit]:hover {
+  background-color: $red;
+  color: white;
+}
+
+/*End account page specific*/
+
+
+
+
+/*index page specific*/
+.book-display {
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 95vh;
+}
+
+/*End index page specific*/
+
+
+
+
+/*image styling*/
+.vsm-img {
+  max-width: 20vw;
+}
+
+.sm-img {
+  max-width: 35vw;
+}
+
+.med-img {
+  max-width: 45vw;
+}
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.parrallelogram {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/*end image styling*/
+
+
+
+
+/*media queries*/
 @media screen and (max-width: 600px) {
   .hide-small {
     display: none !important;
