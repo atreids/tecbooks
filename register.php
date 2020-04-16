@@ -19,6 +19,10 @@ if(isset($_SESSION['login'])){
     <?php include("./inc/navbar.php");?>
     <!-- Includes universal navbar -->
 
+    <div class="divider">
+
+    </div>
+
     <div class="container">
         <div class="inner-container" style="min-height:89vh;">
             <form action="./inc/register_pro.php" method="post">

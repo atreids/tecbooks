@@ -11,6 +11,7 @@ if(isset($_SESSION['login'])){
 
 <head>
     <?php include("./inc/header.php");?>
+    <link rel="stylesheet" href="./css/logincss.css">
     <!-- Includes universal header -->
     <title>Tecbooks</title>
 </head>
@@ -20,24 +21,24 @@ if(isset($_SESSION['login'])){
     <!-- Includes universal navbar -->
 
 
+    <div class="divider">
 
-    <div class="container">
-        <div class="inner-container" style="min-height:89vh;">
-            <form action="./inc/login_pro.php" method="post">
-                <label>Login</label>
-                <br>
-                <input type="email" name="email" placeholder="Email">
-                <br>
-                <input type="password" name="password" placeholder="Password">
-                <br>
-                <input type="submit" name="submit">
-            </form>
-            <?php
+    </div>
+    <div class="container-fluid center-text">
+        <form class="form-signin" action="./inc/login_pro.php" method="post">
+            <h2 class="form-signin-heading">Please Login</h2>
+            <label for="email" class="sr-only">Email Address</label>
+            <input class="form-control" type="email" id="email" name="email" placeholder="Email" required autofocus>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        </form>
+        <?php
     if(isset($_GET['loginfailed'])) {
         echo '<h4 style="color:red;margin-top:2px;">Login failed</h4>';
     } ?>
-        </div>
     </div>
+
     <?php include("./inc/footer.php");?>
     <!-- Includes universal footer -->
 </body>

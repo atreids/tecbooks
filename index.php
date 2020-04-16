@@ -78,7 +78,8 @@ include("./inc/connection.php");
             <a href="./browse.php"><button class="btn btn-default btn-lg btn-blue">Browse</button></a>
         </div>
     </div>
-
+    <?php include("./inc/footer.php");?>
+    <!-- Includes universal footer -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="./node_modules/dist/jquery.min.js"></script>
     <!-- Bootstrap precompiled js -->
