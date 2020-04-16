@@ -3,55 +3,28 @@ session_start();
 include("./inc/connection.php");
 ?>
 
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <?php include("./inc/header.php");?>
-    <!-- Includes universal header -->
-    <title>Tecbooks</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TecBooks</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <?php include("./inc/navbar.php");?>
-    <!-- Includes universal navbar -->
+    <h1>Hello, world!</h1>
 
-    <div id="para1" class="img-1 parrallax center-text med-height">
-        <span id="lander">Books for nerds</br> By nerds</span>
-    </div>
-
-    <div class="container redbackground book-display">
-        <div class="inner-container">
-            <div class="card book">
-                <div class="placeholder-img"></div>
-                <p>Author: Here</p>
-                <p>ISBN: Here</p>
-                <p>Price: Here</p>
-                <button class="btn-book opacity-low">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="para2" class="img-2 parrallax short-height">
-    </div>
-
-    <div class="container navybackground">
-        <div class="inner-container navybackground med-height">
-            <div class="col">
-                <h3>Our Mission:</h3>
-                <p>We are a small, family-owned, independent bookstore based out of Edinburgh, Scotland.
-                    We hope to inspire the world to read, from our small cosy shop just off of Edinburgh's historic
-                    royal mile.
-                </p>
-            </div>
-            <div class="col">
-                <img src="./img/bookstore.jpg" class="parrallelogram sm-img">
-            </div>
-        </div>
-    </div>
-    <?php include("./inc/footer.php");?>
-    <!-- Includes universal footer -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./node_modules/dist/jquery.min.js"></script>
+    <!-- Bootstrap precompiled js -->
+    <script src="./js/bootstrap.js"></script>
 </body>
 
 </html>
