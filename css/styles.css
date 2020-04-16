@@ -1,1 +1,47 @@
-/* No CSS *//*# sourceMappingURL=styles.css.map */
+.logo {
+  color: #f1faee;
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+  display: block;
+  padding: 10px 20px;
+  font-size: 32px;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.logo:hover {
+  color: #e63946;
+}
+
+/*parrallax css*/
+.img-1 {
+  background-image: url("../img/bookshelves.jpg");
+}
+
+.img-2 {
+  background-image: url("../img/assortedbooks.jpg");
+}
+
+.img-3 {
+  background-image: url("../img/reading.jpg");
+}
+
+.parrallax {
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lander {
+  background: rgba(1, 1, 1, 0.7);
+  font-family: "Pacifico", cursive;
+  border: 5px solid #f1faee;
+  font-size: 40px;
+  color: #f1faee;
+  padding: 40px 40px;
+}
+
+/*end of parrallax*/
+/*# sourceMappingURL=styles.css.map */

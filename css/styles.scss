@@ -1,0 +1,54 @@
+$queenblue: #457b9d;
+$spacecadet: #1d3557;
+$lightblue: #a8dadc;
+$red: #e63946;
+$textgray: #494c4e;
+$text1: #f1faee;
+$text2: #e63946;
+
+
+.logo {
+    color: $text1;
+    text-decoration: none;
+    font-family: "Pacifico", cursive;
+    display: block;
+    padding: 10px 20px;
+    font-size: 32px;
+    transition: 100ms;
+}
+
+.logo:hover {
+    color: $text2;
+}
+
+/*parrallax css*/
+.img-1 {
+    background-image: url("../img/bookshelves.jpg");
+}
+
+.img-2 {
+    background-image: url("../img/assortedbooks.jpg");
+}
+
+.img-3 {
+    background-image: url("../img/reading.jpg")
+}
+
+.parrallax {
+    width: 100vw;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#lander {
+    background: rgba(1, 1, 1, 0.7);
+    font-family: "Pacifico", cursive;
+    border: 5px solid $text1;
+    font-size: 40px;
+    color: $text1;
+    padding: 40px 40px;
+}
+
+/*end of parrallax*/
