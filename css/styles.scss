@@ -6,19 +6,82 @@ $textgray: #494c4e;
 $text1: #f1faee;
 $text2: #e63946;
 
+body {
+    min-height: 200vh;
+}
+
+h2 {
+    font-family: 'New Baskerville', Baskerville, serif;
+    font-weight: 500;
+    color: #000;
+}
+
+em {
+    font-style: italic;
+}
 
 .logo {
-    color: $text1;
     text-decoration: none;
     font-family: "Pacifico", cursive;
     display: block;
     padding: 10px 20px;
     font-size: 32px;
     transition: 100ms;
+    cursor: pointer;
+    color: $spacecadet;
 }
 
 .logo:hover {
     color: $text2;
+}
+
+.med-height {
+    min-height: 40vh;
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-blue {
+    border: none;
+    color: black;
+    background-color: #0099FF;
+}
+
+.btn-blue:hover {
+    color: white;
+    background-color: $red;
+}
+
+.top-line {
+    min-height: 1vh;
+    background-color: $red;
+
+}
+
+.buffer-top {
+    margin-top: 5vh;
+}
+
+.buffer-bottom {
+    margin-bottom: 5vh;
+}
+
+.navbar-nav>li>a {
+    color: $spacecadet;
+    transition: 80ms;
+}
+
+.navbar-nav>li>a:hover {
+    background-color: $red;
+    color: $text1;
+}
+
+.active {
+    border-bottom: 2px solid $red;
 }
 
 /*parrallax css*/
@@ -40,11 +103,12 @@ $text2: #e63946;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-bottom: 2vh;
 }
 
 #lander {
-    background: rgba(1, 1, 1, 0.7);
-    font-family: "Pacifico", cursive;
+    font-family: 'New Baskerville', Baskerville, serif;
+    background: rgba(1, 1, 1, 0.9);
     border: 5px solid $text1;
     font-size: 40px;
     color: $text1;
@@ -52,3 +116,94 @@ $text2: #e63946;
 }
 
 /*end of parrallax*/
+
+/*image styling*/
+.vsm-img {
+    max-width: 20vw;
+}
+
+.sm-img {
+    max-width: 35vw;
+}
+
+.med-img {
+    max-width: 45vw;
+}
+
+.circle {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.parrallelogram {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/*end image styling*/
+
+/* search bar */
+.search {
+    color: $text1;
+    width: 40vw;
+    padding: 8px 20px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 2px solid $red;
+    transition: all 150ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.search::placeholder {
+    color: color($text1 a(0.9));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.search:focus {
+    padding: 5px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 2px solid $red;
+    border-radius: 0;
+    background-position: 100% center;
+}
+
+.search:hover {
+    padding: 5px 0;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 2px solid $red;
+    border-radius: 0;
+    background-position: 100% center;
+}
+
+.searchbutton {
+    padding: 10px 15px;
+    border: none;
+}
+
+.searchbutton:hover {
+    background-color: $red;
+}
+
+
+@media screen and (max-width: 768px) {
+    .parrallax {
+        display: none;
+    }
+
+    .search {
+        max-width: 95vw;
+    }
+
+    #lander {
+        display: none;
+    }
+}

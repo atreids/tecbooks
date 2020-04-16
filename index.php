@@ -16,59 +16,68 @@ include("./inc/connection.php");
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/styles.css">
+
+    <script src="https://kit.fontawesome.com/6c30bf13b8.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Martel+Sans|Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid center">
-        <h1 class="title">TecBooks</h1>
-    </div>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="./index.php">HOME</a></li>
-                    <li><a href="#">BESTSELLERS</a></li>
-                    <li><a href="#">MATHEMATICS</a></li>
-                    <li><a href="#">COMPUTER SCIENCE</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                            CATEGORIES</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">NEW</a></li>
-                            <li><a href="#">BIOLOGY</a></li>
-                            <li><a href="#">ARCHITECTURE</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-right">
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Search"></div>
-                    <button type="submit" class="btn btn-default">SEARCH</button>
-                </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <?php
-                        if(isset($_SESSION['login'])){
-                            echo '<li><a href="./inc/cart.php">Cart</a></li>';
-                            echo '<li><a href="./inc/logout.php">Logout</a></li>';
-                        } else {
-                            echo '<li><a href="login.php">Login</a></li>
-                            <li><a href="register.php">Register</a></li>';
-                        };
-                    ?>
-                </ul>
-            </div>
-            <!--End of navbar collapse-->
-        </div>
-    </nav>
+    <?php
+        include("./inc/navbar.php");
+    ?>
 
-    <div class="parralax img-1"></div>
+    <div class="container-fluid parrallax img-2 med-height center-text" style="flex-flow:column;">
+        <div class="row row-no-gutters">
+            <div class="col"><span id="lander"><em>Books For The Mind And Soul</em></span></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row center-text">
+            <form>
+                <input type="text" class="search" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row book-header">
+            <h2><em>New In Stock</em></h2>
+        </div>
+        <div class="row panel">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="..." alt="...">
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p>...</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row book-header">
+            <h2><em>Our Bestsellers</em></h2>
+        </div>
+        <div class="row panel">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="..." alt="...">
+                    <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p>...</p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row book-header center-text">
+            <h2><em>Browse Our Full Selection</em></h2>
+        </div>
+        <div class="row center-text">
+            <a href="./browse.php"><button class="btn btn-default btn-lg btn-blue">Browse</button></a>
+        </div>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="./node_modules/dist/jquery.min.js"></script>
