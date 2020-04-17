@@ -88,13 +88,15 @@ em {
     transition: 80ms;
 }
 
+.active {
+    border-bottom: 2px solid $red;
+    border-radius: 4px;
+}
+
 .navbar-nav>li>a:hover {
     background-color: $red;
     color: $text1;
-}
-
-.active {
-    border-bottom: 2px solid $red;
+    border-radius: 4px;
 }
 
 footer {

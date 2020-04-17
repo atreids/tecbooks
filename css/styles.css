@@ -89,13 +89,15 @@ em {
   transition: 80ms;
 }
 
+.active {
+  border-bottom: 2px solid #e63946;
+  border-radius: 4px;
+}
+
 .navbar-nav > li > a:hover {
   background-color: #e63946;
   color: #f1faee;
-}
-
-.active {
-  border-bottom: 2px solid #e63946;
+  border-radius: 4px;
 }
 
 footer {
