@@ -17,6 +17,10 @@ em {
   font-style: italic;
 }
 
+.book-img {
+  max-height: 30vh;
+}
+
 .logo {
   text-decoration: none;
   font-family: "Pacifico", cursive;
@@ -77,6 +81,10 @@ em {
 
 .buffer-top {
   margin-top: 5vh;
+}
+
+.padding-top {
+  padding-top: 10px;
 }
 
 .buffer-bottom {

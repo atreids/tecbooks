@@ -1,5 +1,6 @@
 <?php
-include("../inc/connection.php");
+require("../inc/connection.php"); #Includes connection to database, $db is variable for connection.
+require("../inc/password.php"); #Required for BCRYPT hashing algorithm to function on PHP 5.3.10
 
 $email = $_POST['email'];
 $pass = $_POST['password'];

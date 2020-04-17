@@ -38,53 +38,12 @@ include("./inc/connection.php");
             </form>
         </div>
     </div>
-    <div class="container">
-        <div class="row book-header">
-            <h2><em>New In Stock</em></h2>
-        </div>
-        <div class="row panel">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="..." alt="...">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
-                                class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row book-header">
-            <h2><em>Our Bestsellers</em></h2>
-        </div>
-        <div class="row panel">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="..." alt="...">
-                    <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
-                                class="btn btn-default" role="button">Button</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row book-header center-text">
-            <h2><em>Browse Our Full Selection</em></h2>
-        </div>
-        <div class="row center-text">
-            <a href="./browse.php"><button class="btn btn-default btn-lg btn-blue">Browse</button></a>
-        </div>
-    </div>
-    <?php include("./inc/footer.php");?>
+
+    <?php 
+    include("./inc/card.php");
+    include("./inc/footer.php");
+    ?>
     <!-- Includes universal footer -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap precompiled js -->
-    <script src="./js/bootstrap.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
 </body>
 
 </html>

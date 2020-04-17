@@ -5,12 +5,14 @@ $red: #e63946;
 $textgray: #494c4e;
 $text1: #f1faee;
 $text2: #e63946;
+$background: #F7F7F9;
 
 html {
     position: relative;
 }
 
 body {
+
     min-height: 95vh;
     margin-bottom: 5vh;
 }
@@ -23,6 +25,12 @@ h2 {
 
 em {
     font-style: italic;
+}
+
+
+
+.book-img {
+    max-height: 30vh;
 }
 
 .logo {
@@ -77,6 +85,10 @@ em {
 
 .buffer-top {
     margin-top: 5vh;
+}
+
+.padding-top {
+    padding-top: 10px;
 }
 
 .buffer-bottom {
