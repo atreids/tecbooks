@@ -48,3 +48,9 @@ include("./inc/connection.php");
             </div>
         </div>
     </div>
+    <?php
+include("./inc/footer.php");
+?>
+</body>
+
+</html>

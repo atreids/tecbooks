@@ -17,12 +17,12 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="./index.php">HOME</a></li>
+                <li><a href="./index.php">HOME</a></li>
                 <li><a href="./browse.php">BESTSELLERS</a></li>
                 <li><a href="./browse.php">MATHEMATICS</a></li>
                 <li><a href="./browse.php">COMPUTER SCIENCE</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                        CATEGORIES</a>
+                        MORE<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">NEW</a></li>
                         <li><a href="#">BIOLOGY</a></li>
