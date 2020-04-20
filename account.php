@@ -23,30 +23,31 @@ error_reporting(E_ALL);
 
 <body>
     <?php include("./inc/navbar.php");?>
+    <link rel="stylesheet" href="./css/logincss.css">
     <!-- Includes universal navbar -->
 
     <div class="divider">
 
     </div>
 
-    <div class="container navybackground">
-        <div class="inner-container-wide med-height navybackground">
-            <div class="col-30 ">
-                <h3>Manage Account:</h3>
+    <div class="container-fluid flex-boi account-div">
+        <div class="row center-text">
+            <div class="col-sm-4 center-text vertical margin-right">
+                <h3 class="bottom-h">Manage Account</h3>
                 <ul class="btn-list">
-                    <li><button id="vdetails" class="btn btn-active"
+                    <li><button id="vdetails" class="btn btn-blue btn-active"
                             onclick="loadDoc('./inc/displayDetails.php', v_accountDetails)">
                             View Your Details</button></li>
-                    <li><button id="vaddresses" class="btn"
+                    <li><button id="vaddresses" class="btn btn-blue"
                             onclick="loadDoc('./inc/displayAddresses.php', v_addressDetails)">
                             View Your Addresses</button></li>
-                    <li><button id="vpayments" class="btn"
+                    <li><button id="vpayments" class="btn btn-blue"
                             onclick="loadDoc('./inc/displayPayments.php', v_paymentDetails)">
                             View Payment Methods</button></li>
                     <li><button id="delete" class="btn">Delete Account</button></li>
                 </ul>
             </div>
-            <div class="col-70" id="ajax">
+            <div class="col-sm-8 panel center-text vertical" id="ajax">
                 <?php
                     $id = $_SESSION['user_id'];
                     $query = "SELECT firstname, surname, email FROM Customers WHERE customer_id = '$id'";
@@ -56,8 +57,8 @@ error_reporting(E_ALL);
                     echo "Name: " . $row['firstname'] . " " . $row['surname'] . "<br>";
                     echo "Email: " . $row['email'] . "<br>";
                     echo '<form action="javascript:updateEmail()" method="post">';
-                    echo '<input id="newemail" class="input" type="email" placeholder="update email.." name="newemail"><br>';
-                    echo '<input type="submit" class="btn" name="submit">';
+                    echo '<input id="newemail" class="form-control" type="email" placeholder="Update Email.." name="newemail" required autofocus><br>';
+                    echo '<input type="submit" class="btn btn-blue" name="submit">';
                     echo '</form>';
                     echo '<div class="msg"></div>';
                 ?>
@@ -65,8 +66,7 @@ error_reporting(E_ALL);
         </div>
     </div>
 
-    <div id="para3" class="img-3 parrallax short-height">
-    </div>
+    <div class="divider"></div>
 
     <div class="container navybackground">
         <div class="inner-container med-height navybackground">

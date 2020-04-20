@@ -28,6 +28,12 @@ em {
   font-style: italic;
 }
 
+.flex-boi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .book-img {
   max-height: 25vh;
 }
@@ -62,6 +68,8 @@ em {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .vertical {
@@ -71,18 +79,29 @@ em {
           flex-direction: column;
 }
 
+.btn-list {
+  list-style-type: none;
+}
+
 .btn-blue {
   border: solid 2px #1d3557;
   color: #f1faee;
   background-color: #457b9d;
   -webkit-transition: 80ms;
   transition: 80ms;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
+.btn-active,
 .btn-blue:hover {
   border: solid 2px #1d3557;
   color: white;
   background-color: #e63946;
+}
+
+.margin-right {
+  margin-right: 20vw;
 }
 
 .top-line {
@@ -181,6 +200,10 @@ footer {
 
 .med-height {
   min-height: 40vh;
+}
+
+.account-div {
+  min-height: 85vh;
 }
 
 /*parrallax css*/
