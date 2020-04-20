@@ -25,7 +25,7 @@
                 <li><a href="./browse.php">COMPUTER SCIENCE</a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                         MORE<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu hide-small">
                         <li><a href="#">NEW</a></li>
                         <li><a href="#">BIOLOGY</a></li>
                         <li><a href="#">ARCHITECTURE</a></li>

@@ -12,9 +12,21 @@ html {
 }
 
 body {
-
+    background-color: $background;
     min-height: 95vh;
     margin-bottom: 5vh;
+}
+
+.panel {
+    background-color: $background;
+}
+
+.thumbnail {
+    max-height: 30vh;
+
+    -webkit-box-shadow: 3px 14px 29px -18px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 14px 29px -18px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 14px 29px -18px rgba(0, 0, 0, 0.75);
 }
 
 h2 {
@@ -30,7 +42,7 @@ em {
 
 
 .book-img {
-    max-height: 30vh;
+    max-height: 25vh;
 }
 
 .logo {
@@ -41,7 +53,7 @@ em {
     font-size: 32px;
     transition: 100ms;
     cursor: pointer;
-    color: $spacecadet;
+    color: $queenblue;
 }
 
 .logo:hover {
@@ -58,13 +70,19 @@ em {
     align-items: center;
 }
 
+.vertical {
+    flex-direction: column;
+}
+
 .btn-blue {
-    border: none;
+    border: solid 2px $spacecadet;
     color: $text1;
-    background-color: #0099FF;
+    background-color: $queenblue;
+    transition: 80ms;
 }
 
 .btn-blue:hover {
+    border: solid 2px $spacecadet;
     color: white;
     background-color: $red;
 }
@@ -83,12 +101,25 @@ em {
     border: 0.5px solid $textgray;
 }
 
+.bottom-h {
+    color: $queenblue;
+    font-size: 3em;
+}
+
+.bottom-para {
+    font-size: 2em;
+}
+
 .buffer-top {
     margin-top: 5vh;
 }
 
 .padding-top {
     padding-top: 10px;
+}
+
+.padding-left {
+    padding-left: 20vw;
 }
 
 .buffer-bottom {
@@ -98,6 +129,13 @@ em {
 .navbar-nav>li>a {
     color: $spacecadet;
     transition: 80ms;
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .active {
@@ -123,13 +161,17 @@ footer {
 }
 
 .link {
-    color: #000;
+    color: $queenblue;
     text-decoration: none;
 }
 
 .link:hover {
     text-decoration: none;
     color: $red;
+}
+
+.med-height {
+    min-height: 40vh;
 }
 
 /*parrallax css*/
@@ -171,7 +213,7 @@ footer {
 }
 
 .sm-img {
-    max-width: 35vw;
+    max-width: 30vw;
 }
 
 .med-img {
@@ -241,6 +283,20 @@ footer {
     background-color: $red;
 }
 
+@media screen and (max-width: 820px) {
+    .hide-small {
+        display: none;
+    }
+
+    .bottom-h {
+        font-size: 1.5em;
+    }
+
+    .bottom-para {
+        font-size: 1em;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     .parrallax {
@@ -253,5 +309,17 @@ footer {
 
     #lander {
         display: none;
+    }
+
+    .hide-small {
+        display: none;
+    }
+
+    .med-height {
+        min-height: none;
+    }
+
+    .padding-left {
+        padding-left: 0;
     }
 }

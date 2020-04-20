@@ -20,11 +20,11 @@ $data2 = mysqli_query($db, $sql);
                 if(in_array("New", $array_of_current_books_tags)) {
                     echo '
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
+                            <div class="thumbnail center-text">
                                 <img src="'.$array['cover'].'" alt="..." class="book-img">
-                                <div class="caption">
+                                <div class="caption center-text vertical">
                                     <h3>'.$array['title'].'</h3>
-                                    <p>'.$array['book_desc'].'</p>
+                                    <h4>'.$array['author'].'</h4>
                                     <p><em>Price: £'.$array['product_price'].'</em></p>
                                     <p><a href="#" class="btn btn-blue" role="button">Add To Cart</a>
                                 </div>
@@ -52,11 +52,11 @@ $data2 = mysqli_query($db, $sql);
                 if(in_array("Bestseller", $array_of_current_books_tags)) {
                     echo '
                         <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
+                            <div class="thumbnail center-text">
                                 <img src="'.$array2['cover'].'" alt="..." class="book-img">
-                                <div class="caption">
+                                <div class="caption center-text vertical">
                                     <h3>'.$array2['title'].'</h3>
-                                    <p>'.$array2['book_desc'].'</p>
+                                    <h4>'.$array2['author'].'</h4>
                                     <p><em>Price: £'.$array2['product_price'].'</em></p>
                                     <p><a href="#" class="btn btn-blue" role="button">Add To Cart</a>
                                 </div>
@@ -75,5 +75,7 @@ $data2 = mysqli_query($db, $sql);
     <div class="row center-text">
         <a href="./browse.php"><button class="btn btn-default btn-lg btn-blue">Browse</button></a>
     </div>
+
+    <div class="buffer-bottom"></div>
 
 </div>

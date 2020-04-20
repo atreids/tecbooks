@@ -18,9 +18,6 @@ error_reporting(E_ALL);
     <?php 
         include("./inc/header.php");
     ?> <!-Includes basic header->
-        <script src="https://kit.fontawesome.com/6c30bf13b8.js" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="./css/style.css">
         <title>Tecbooks</title>
 </head>
 
@@ -28,10 +25,8 @@ error_reporting(E_ALL);
     <?php include("./inc/navbar.php");?>
     <!-- Includes universal navbar -->
 
-    <div class="container redbackground">
-        <div class="inner-container">
-            <h2>Welcome to your account page</h2>
-        </div>
+    <div class="divider">
+
     </div>
 
     <div class="container navybackground">

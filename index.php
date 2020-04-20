@@ -30,8 +30,22 @@ include("./inc/connection.php");
 
     <?php 
     include("./inc/card.php");
-    include("./inc/footer.php");
     ?>
+    <div class="divider"></div>
+    <div class="container-fluid med-height buffer-top">
+        <div class="row flex-centered">
+            <div class="col-sm-6 padding-left">
+                <h3 class="bottom-h">We all read a little differently</h3>
+                <p class="bottom-para">But no matter how you read, we are here to help to get you your books on-time and
+                    at a great price! <br>Leaving you more time for that next chapter!
+                </p>
+            </div>
+            <div class="col-sm-6 hide-small">
+                <img src="./img/bookstore2.jpg" class="parrallelogram sm-img">
+            </div>
+        </div>
+    </div>
+    <?php include("./inc/footer.php");?>
     <!-- Includes universal footer -->
 </body>
 
