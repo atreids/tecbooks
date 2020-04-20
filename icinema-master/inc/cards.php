@@ -8,9 +8,9 @@
 
 
 <div class="container">
-  <div class="row">
+    <div class="row">
 
-    <?php
+        <?php
     while($array = mysqli_fetch_assoc($data)) { echo
     '<div class="col-sm">
       <div class="card" style="width: 18rem;">
@@ -26,10 +26,10 @@
               '.$array['briefdesc'].'
             
           </p>
-          <a href="booknow.php?title='.$array['title'].'" class="btn btn-primary">BOOK</a>
+          <a href="booknow.php?title='.$array['title'].'" class="btn btn-blue">BOOK</a>
         </div>
       </div>
     </div>'
     ;} ?>
-  </div>
+    </div>
 </div>

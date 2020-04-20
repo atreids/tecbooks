@@ -26,7 +26,7 @@ $data2 = mysqli_query($db, $sql);
                                     <h3>'.$array['title'].'</h3>
                                     <p>'.$array['book_desc'].'</p>
                                     <p><em>Price: £'.$array['product_price'].'</em></p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a>
+                                    <p><a href="#" class="btn btn-blue" role="button">Add To Cart</a>
                                 </div>
                             </div>
                         </div>';
@@ -58,7 +58,7 @@ $data2 = mysqli_query($db, $sql);
                                     <h3>'.$array2['title'].'</h3>
                                     <p>'.$array2['book_desc'].'</p>
                                     <p><em>Price: £'.$array2['product_price'].'</em></p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Add To Cart</a>
+                                    <p><a href="#" class="btn btn-blue" role="button">Add To Cart</a>
                                 </div>
                             </div>
                         </div>';

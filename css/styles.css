@@ -55,7 +55,7 @@ em {
 
 .btn-blue {
   border: none;
-  color: black;
+  color: #f1faee;
   background-color: #0099FF;
 }
 
@@ -135,7 +135,7 @@ footer {
 }
 
 .img-2 {
-  background-image: url("../img/assortedbooks.jpg");
+  background-image: url("../img/assortedbooks2.jpg");
 }
 
 .img-3 {

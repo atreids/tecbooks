@@ -2,7 +2,9 @@
 
 </div>
 <div class="container-fluid center-text">
-    <h1 class="logo">TecBooks</h1>
+    <a class="link" href="./index.php">
+        <h1 class="logo">TecBooks</h1>
+    </a>
 </div>
 <nav class="navbar">
     <div class="container-fluid">
@@ -34,6 +36,7 @@
                 <?php
                         if(isset($_SESSION['login'])){
                             echo '<li><a href="./inc/cart.php">CART</a></li>';
+                            echo '<li><a href="./account.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>';
                             echo '<li><a href="./inc/logout.php">LOGOUT</a></li>';
                         } else {
                             echo '<li><a href="login.php">LOGIN</a></li>

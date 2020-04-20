@@ -25,8 +25,11 @@ include("./inc/connection.php");
     <?php
         include("./inc/navbar.php");
     ?>
+    <div class="divider">
 
-    <div class="container-fluid">
+    </div>
+
+    <div class="container-fluid buffer-top">
         <div class="row center-text">
             <form>
                 <input type="text" class="search" placeholder="Search...">
@@ -41,13 +44,14 @@ include("./inc/connection.php");
                     <div class="caption">
                         <h3>Thumbnail label</h3>
                         <p>...</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
-                                class="btn btn-default" role="button">Button</a></p>
+                        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-blue"
+                                role="button">Button</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <?php
 include("./inc/footer.php");
 ?>
