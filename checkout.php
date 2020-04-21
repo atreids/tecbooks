@@ -30,12 +30,6 @@ include("./inc/connection.php");
         <?php include("./inc/paypal.php");?>
     </div>
     <?php include("./inc/footer.php");?>
-    <!-- Includes universal footer -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="./node_modules/dist/jquery.min.js"></script>
-    <!-- Bootstrap precompiled js -->
-    <script src="./js/bootstrap.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
 </body>
 
 </html>

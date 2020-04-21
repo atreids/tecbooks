@@ -2,8 +2,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Bootstrap -->
+<!-- Bootstrap CSS-->
 <link rel="stylesheet" href="./css/bootstrap.css">
+<!-- TecBooks CSS -->
 <link rel="stylesheet" href="./css/styles.css">
 
 <script src="https://kit.fontawesome.com/6c30bf13b8.js" crossorigin="anonymous"></script>

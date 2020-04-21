@@ -18,12 +18,13 @@ error_reporting(E_ALL);
     <?php 
         include("./inc/header.php");
     ?> <!-Includes basic header->
+        <link rel="stylesheet" href="./css/logincss.css">
         <title>Tecbooks</title>
 </head>
 
 <body>
     <?php include("./inc/navbar.php");?>
-    <link rel="stylesheet" href="./css/logincss.css">
+
     <!-- Includes universal navbar -->
 
     <div class="divider">
