@@ -99,6 +99,15 @@ em {
     background-color: $red;
 }
 
+.btn-added {
+    border: solid 2px $spacecadet;
+    color: $text1;
+    background-color: $textgray;
+    cursor: default;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
 .margin-right {
     margin-right: 20vw;
 }

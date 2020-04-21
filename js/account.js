@@ -1,20 +1,3 @@
-function loadDoc(url, cFunction) {
-  //generic ajax function
-  var xhttp;
-  if (window.XMLHttpRequest) {
-    xhttp = new XMLHttpRequest();
-  } else {
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      cFunction(this);
-    }
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
-
 function updateEmail() {
   //Is used to update user's email address
   var newemail = document.getElementById("newemail").value;

@@ -26,7 +26,7 @@ $data2 = mysqli_query($db, $sql);
                                     <h3>'.$array['title'].'</h3>
                                     <h4>'.$array['author'].'</h4>
                                     <p><em>Price: £'.$array['product_price'].'</em></p>
-                                    <p><a href="#" class="btn btn-blue" role="button">Add To Cart</a>
+                                    <p id="btn_'.$array['stock_id'].'"><button class="btn btn-blue" onclick="loadDocCart('.$array['stock_id'].')">Add to Cart</button></p>
                                 </div>
                             </div>
                         </div>';
@@ -36,7 +36,7 @@ $data2 = mysqli_query($db, $sql);
         ?>
 
     </div>
-
+    <?php print_r($_SESSION['cart']);?>
     <div class="row book-header">
         <h2><em>Our Bestsellers</em></h2>
     </div>
@@ -51,17 +51,17 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
                 if(in_array("Bestseller", $array_of_current_books_tags)) {
                     echo '
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail center-text">
-                                <img src="'.$array2['cover'].'" alt="..." class="book-img">
-                                <div class="caption center-text vertical">
-                                    <h3>'.$array2['title'].'</h3>
-                                    <h4>'.$array2['author'].'</h4>
-                                    <p><em>Price: £'.$array2['product_price'].'</em></p>
-                                    <p><a href="#" class="btn btn-blue" role="button">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>';
+                    <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail center-text">
+                        <img src="'.$array2['cover'].'" alt="..." class="book-img">
+                        <div class="caption center-text vertical">
+                            <h3>'.$array2['title'].'</h3>
+                            <h4>'.$array2['author'].'</h4>
+                            <p><em>Price: £'.$array2['product_price'].'</em></p>
+                            <p id="btn_'.$array2['stock_id'].'"><button class="btn btn-blue" onclick="loadDocCart('.$array2['stock_id'].')">Add to Cart</button></p>
+                        </div>
+                    </div>
+                </div>';
                 }
                 $a++;
             }
@@ -79,3 +79,5 @@ $data2 = mysqli_query($db, $sql);
     <div class="buffer-bottom"></div>
 
 </div>
+
+<script src="./js/ajax.js"></script>

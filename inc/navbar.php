@@ -35,7 +35,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php
                         if(isset($_SESSION['login'])){
-                            echo '<li><a href="./inc/cart.php">CART</a></li>';
+                            echo '<li><a href="./cart.php">CART</a></li>';
                             echo '<li><a href="./account.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>';
                             echo '<li><a href="./inc/logout.php">LOGOUT</a></li>';
                         } else {

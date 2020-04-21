@@ -81,7 +81,7 @@ error_reporting(E_ALL);
             </div>
         </div>
     </div>
-
+    <script src="./js/ajax.js"></script>
     <script src="./js/account.js"></script>
     <?php include("./inc/footer.php");?>
     <!-- Includes universal footer -->

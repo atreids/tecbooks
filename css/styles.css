@@ -100,6 +100,15 @@ em {
   background-color: #e63946;
 }
 
+.btn-added {
+  border: solid 2px #1d3557;
+  color: #f1faee;
+  background-color: #494c4e;
+  cursor: default;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
 .margin-right {
   margin-right: 20vw;
 }
