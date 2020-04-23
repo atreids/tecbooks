@@ -1,0 +1,509 @@
+$queenblue: #457b9d;
+$spacecadet: #1d3557;
+$lightblue: #a8dadc;
+$red: #e63946;
+$textgray: #494c4e;
+$text1: #f1faee;
+$text2: #e63946;
+
+
+/*General CSS */
+* {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #494c4e;
+  font-family: "Martel Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+footer {
+  width: 100vw;
+  height: 5vh;
+  background-color: $queenblue;
+}
+
+#footer {
+  color: $text1;
+  font-size: 12px;
+}
+
+/*end of general*/
+
+
+
+/*containers for content*/
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.inner-container-wide {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.col-30 {
+  height: auto;
+  width: auto;
+  max-width: 30vw;
+}
+
+.col-70 {
+  max-width: 70vw;
+  height: auto;
+  width: auto;
+}
+
+.short-height {
+  min-height: 50vh;
+}
+
+.med-height {
+  min-height: 70vh;
+}
+
+.center-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*end of containers*/
+
+
+
+
+/*nav bar css */
+nav {
+  position: sticky;
+  align-self: flex-start;
+  top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 5vh;
+  background-color: $spacecadet;
+  text-align: center;
+  z-index: 2;
+}
+
+.nav-shadow {
+  -webkit-box-shadow: 0px 9px 13px -5px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0px 9px 13px -5px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 9px 13px -5px rgba(0, 0, 0, 0.71);
+}
+
+.navlist {
+  list-style-type: none;
+}
+
+.navlist li {
+  display: inline;
+}
+
+.nav-link {
+  color: $text1;
+  text-decoration: none;
+  display: block;
+  padding: 5px 20px;
+  transition: 0.05s;
+}
+
+.nav-link:hover {
+  color: $text2;
+  padding: 0px 20px;
+  border-bottom: 2px solid $text2;
+}
+
+.logo {
+  color: $text1;
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+  display: block;
+  padding: 10px 20px;
+  font-size: 32px;
+  transition: 100ms;
+}
+
+.logo:hover {
+  color: $text2;
+}
+
+.search {
+  color: $text1;
+  width: 20vw;
+  padding: 8px 20px;
+  background-color: transparent;
+  transition: transform 250ms ease-in-out;
+  font-size: 14px;
+  line-height: 18px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 2px solid $text1;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.search::placeholder {
+  color: color($text1 a(0.8));
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.search:focus {
+  padding: 5px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 2px solid $red;
+  border-radius: 0;
+  background-position: 100% center;
+}
+
+.search:hover {
+  padding: 5px 0;
+  outline: 0;
+  border: 1px solid transparent;
+  border-bottom: 2px solid $red;
+  border-radius: 0;
+  background-position: 100% center;
+}
+
+.searchbutton {
+  padding: 10px 15px;
+  border: none;
+}
+
+.searchbutton:hover {
+  background-color: $red;
+}
+
+/*end nav bar css */
+
+
+
+
+
+/*Colors*/
+.redbackground {
+  background-color: $red;
+  color: $text1;
+}
+
+.navybackground {
+  color: $text1;
+  background: $spacecadet;
+}
+
+/*End colors*/
+
+
+
+
+
+
+
+
+/*Text Styling*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+/*End text styling*/
+
+
+
+
+/*form/button/link styling*/
+.btn-list {
+  list-style-type: none;
+}
+
+.btn {
+  font-size: 16px;
+  color: white;
+  background-color: $spacecadet;
+  width: 200px;
+  border-radius: 5px;
+  padding: 12px 15px;
+  cursor: pointer;
+  margin: 5px;
+  border: 2px solid white;
+  transition: 100ms;
+}
+
+.btn-active {
+  border: 2px solid $text1;
+  background-color: $red;
+  color: white;
+}
+
+.btn:hover {
+  border: 2px solid $text1;
+  background-color: $red;
+  color: white;
+}
+
+.small-link {
+  color: white;
+  text-decoration: none;
+}
+
+.small-link:hover {
+  color: $red;
+}
+
+/*end form/button/link styling*/
+
+
+
+
+/*cards*/
+.card {
+  color: black;
+  padding: 6px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  background-color: $text1;
+
+  -webkit-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 10px 35px -12px rgba(0, 0, 0, 0.75);
+}
+
+.placeholder-img {
+  width: 200px;
+  height: 200px;
+  background-color: darkgrey;
+}
+
+.btn-book {
+  border: none;
+  background-color: $textgray;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.opacity-low {
+  opacity: 0.6;
+}
+
+/*end of cards*/
+
+
+
+/*parrallax css*/
+.img-1 {
+  background-image: url("../img/bookshelves.jpg");
+}
+
+.img-2 {
+  background-image: url("../img/assortedbooks.jpg");
+}
+
+.img-3 {
+  background-image: url("../img/reading.jpg")
+}
+
+.parrallax {
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lander {
+  background: rgba(1, 1, 1, 0.7);
+  font-family: "Pacifico", cursive;
+  border: 5px solid $text1;
+  font-size: 40px;
+  color: $text1;
+  padding: 40px 40px;
+}
+
+/*end of parrallax*/
+
+
+
+
+/*Account page specific*/
+.addresses {
+  height: auto;
+  width: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: white;
+  border: 3px solid $red;
+  margin-bottom: 2vh;
+}
+
+.address-p {
+  color: $spacecadet;
+  font-size: 14px;
+}
+
+.address-form input[type=text],
+.address-form select {
+  margin: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+
+.address-form input[type=submit] {
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.address-form input[type=submit]:hover {
+  background-color: $red;
+  color: white;
+}
+
+/*End account page specific*/
+
+
+
+
+/*index page specific*/
+.book-display {
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 95vh;
+}
+
+/*End index page specific*/
+
+
+
+
+/*image styling*/
+.vsm-img {
+  max-width: 20vw;
+}
+
+.sm-img {
+  max-width: 35vw;
+}
+
+.med-img {
+  max-width: 45vw;
+}
+
+.circle {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.parrallelogram {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/*end image styling*/
+
+
+
+
+/*media queries*/
+@media screen and (max-width: 600px) {
+  .hide-small {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .hide-large {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hide-medium {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #lander {
+    display: none;
+  }
+
+  .col {
+    max-width: 100vw;
+  }
+
+  .inner-container {
+    flex-direction: column;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}

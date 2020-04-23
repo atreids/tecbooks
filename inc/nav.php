@@ -1,3 +1,11 @@
+<div class="container-fluid top-line">
+
+</div>
+<div class="container-fluid center-flex">
+    <a class="nav-link" href="./index.php">
+        <h1 class="logo">TecBooks</h1>
+    </a>
+</div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -8,30 +16,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="./index.php">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="./browse.php?tags=Bestsellers">BESTSELLERS</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./browse.php?tags=ComputerScience">COMPUTER SCIENCE</a>
+            </li>
+            <?php
+                        if(isset($_SESSION['login'])){
+                            echo '<li class="nav-item"><a class="nav-link" href="./cart.php">CART</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="./account.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="./php/logout.php">LOGOUT</a></li>';
+                        } else {
+                            echo '<li class="nav-item"><a class="nav-link" href="./login.php">LOGIN</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./register.php">REGISTER</a></li>';
+                        };
+                    ?>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                    MORE
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="./contact.php">CONTACT US</a>
+                    <a class="dropdown-item" href="./about.php">ABOUT US</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 </nav>

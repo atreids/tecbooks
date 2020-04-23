@@ -10763,4 +10763,120 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
+body {
+  min-height: 200vh;
+}
+
+/*Navbar stuff*/
+.top-line {
+  min-height: 1vh;
+  background-color: #e63946;
+}
+
+.logo {
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+  display: block;
+  padding: 10px 20px;
+  font-size: 32px;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+  cursor: pointer;
+  color: #457b9d;
+}
+
+.logo:hover {
+  color: #e63946;
+}
+
+/*End Navbar stuff*/
+.center-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+/*Height pickers*/
+.med-height {
+  min-height: 40vh;
+}
+
+/*parrallax css*/
+.img-1 {
+  background-image: url("../img/bookshelves.jpg");
+}
+
+.img-2 {
+  background-image: url("../img/assortedbooks2.jpg");
+}
+
+.img-3 {
+  background-image: url("../img/reading.jpg");
+}
+
+.parrallax {
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lander {
+  font-family: 'New Baskerville', Baskerville, serif;
+  background: rgba(1, 1, 1, 0.9);
+  border: 5px solid #f1faee;
+  font-size: 40px;
+  color: #f1faee;
+  padding: 40px 40px;
+}
+
+/*end of parrallax*/
+/*Signin/register forms*/
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-control {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/*End Signin/register forms*/
 /*# sourceMappingURL=generic_style.css.map */

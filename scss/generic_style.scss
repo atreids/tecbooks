@@ -1,2 +1,119 @@
-//Leave beneath all overrides
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+$queenblue: #457b9d;
+$spacecadet: #1d3557;
+$lightblue: #a8dadc;
+$red: #e63946;
+$textgray: #494c4e;
+$text1: #f1faee;
+$text2: #e63946;
+$bg: #F7F7F9;
+
+
+body {
+    min-height: 200vh;
+}
+
+/*Navbar stuff*/
+.top-line {
+    min-height: 1vh;
+    background-color: $red;
+}
+
+.logo {
+    text-decoration: none;
+    font-family: "Pacifico", cursive;
+    display: block;
+    padding: 10px 20px;
+    font-size: 32px;
+    transition: 100ms;
+    cursor: pointer;
+    color: $queenblue;
+}
+
+.logo:hover {
+    color: $text2;
+}
+
+/*End Navbar stuff*/
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/*Height pickers*/
+.med-height {
+    min-height: 40vh;
+}
+
+/*parrallax css*/
+.img-1 {
+    background-image: url("../img/bookshelves.jpg");
+}
+
+.img-2 {
+    background-image: url("../img/assortedbooks2.jpg");
+}
+
+.img-3 {
+    background-image: url("../img/reading.jpg")
+}
+
+.parrallax {
+    width: 100vw;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#lander {
+    font-family: 'New Baskerville', Baskerville, serif;
+    background: rgba(1, 1, 1, 0.9);
+    border: 5px solid $text1;
+    font-size: 40px;
+    color: $text1;
+    padding: 40px 40px;
+}
+
+/*end of parrallax*/
+
+/*Signin/register forms*/
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/*End Signin/register forms*/
