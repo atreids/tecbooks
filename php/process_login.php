@@ -4,7 +4,7 @@ require("../php/password.php"); #Required for BCRYPT hashing algorithm to functi
 
 $email = $_POST['inputEmail'];
 $pass = $_POST['inputPassword'];
-$query1 = "SELECT * FROM customers WHERE email = '$email'";
+$query1 = "SELECT * FROM Customers WHERE email = '$email'";
 $result = mysqli_query($db,$query1);
 $row1 = mysqli_fetch_array($result,MYSQLI_ASSOC);
 

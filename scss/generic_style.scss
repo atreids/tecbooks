@@ -11,7 +11,17 @@ $bg: #F7F7F9;
 
 
 body {
+    background-color: $bg;
     min-height: 200vh;
+}
+
+.table .thead-dark {
+    background-color: $queenblue;
+}
+
+#total {
+    color: #fff;
+    background-color: $textgray;
 }
 
 /*Navbar stuff*/
@@ -117,3 +127,9 @@ body {
 }
 
 /*End Signin/register forms*/
+
+@media screen and (min-width: 993px) {
+    .buffer-top {
+        margin-top: 5vh;
+    }
+}

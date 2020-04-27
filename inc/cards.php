@@ -1,6 +1,11 @@
 <?php
-$sql = "SELECT * FROM books";
+$sql = "SELECT * FROM Books";
 $data = mysqli_query($db, $sql);
+if (!$data) {
+    printf("Error: %s\n", mysqli_error($db));
+    exit();
+}
+
 $data2 = mysqli_query($db, $sql);
 ?>
 

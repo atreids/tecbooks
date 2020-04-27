@@ -7,5 +7,8 @@ sb-bzyso1486839@business.example.com
 
 
 Sandbox buyer:
-Email:sb-wlgmw1483689@personal.example.com
-Password:OKZ+ad4g
+Email:sb-fj1y81478441@personal.example.com
+Password:4|]$}?Bu
+
+
+Identity Token: azj5yWgE_VyOufU0BeF7-7TaIcphBsaiuJAGSL3JpHu9zQ2GKEMA0E55RX8

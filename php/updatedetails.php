@@ -4,7 +4,7 @@ include("./connection.php");
 $id = $_SESSION['user_id'];
 $new_email = $_GET['q'];
 
-$sql = "UPDATE customers set email = '$new_email' WHERE customer_id = '$id'";
+$sql = "UPDATE Customers set email = '$new_email' WHERE customer_id = '$id'";
 if(!mysqli_query($db,$sql)) {
     die ('Error: ' .mysqli_error($db));
 } else {

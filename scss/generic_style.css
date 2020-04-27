@@ -10765,7 +10765,17 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 body {
+  background-color: #F7F7F9;
   min-height: 200vh;
+}
+
+.table .thead-dark {
+  background-color: #457b9d;
+}
+
+#total {
+  color: #fff;
+  background-color: #494c4e;
 }
 
 /*Navbar stuff*/
@@ -10879,4 +10889,9 @@ body {
 }
 
 /*End Signin/register forms*/
+@media screen and (min-width: 993px) {
+  .buffer-top {
+    margin-top: 5vh;
+  }
+}
 /*# sourceMappingURL=generic_style.css.map */
