@@ -10,8 +10,8 @@ $data2 = mysqli_query($db, $sql);
 ?>
 
 <div class="container">
-    <div class="row center-flex">
-        <h2><em>Our Bestsellers</em></h2>
+    <div class="row margin-top">
+        <h2><em>Non-Fiction</em></h2>
     </div>
     <div class="row">
         <?php 
@@ -20,7 +20,7 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_tags[$a] = $array['tags'];
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
-                if(in_array("Bestseller", $array_of_current_books_tags)) {
+                if(in_array("NonFiction", $array_of_current_books_tags)) {
                     echo '
                     <div class="col-sm">
                     <div class="card" style="width: 18rem;">
@@ -38,9 +38,8 @@ $data2 = mysqli_query($db, $sql);
             }
         ?>
     </div>
-    <?php print_r($_SESSION['cart']);?>
-    <div class="row center-flex">
-        <h2><em>New In Stock</em></h2>
+    <div class="row margin-top">
+        <h2><em>Fiction</em></h2>
     </div>
     <div class="row">
         <?php 
@@ -49,7 +48,7 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_tags[$a] = $array2['tags'];
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
-                if(in_array("New", $array_of_current_books_tags)) {
+                if(in_array("Fiction", $array_of_current_books_tags)) {
                     echo '
                     <div class="col-sm">
                     <div class="card" style="width: 18rem;">

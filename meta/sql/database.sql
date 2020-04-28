@@ -10,6 +10,8 @@ create table Customers(
     PRIMARY KEY(customer_id)
 );
 
+ALTER TABLE Customers AUTO_INCREMENT = 10000;
+
 create table Books(
     stock_id int NOT NULL AUTO_INCREMENT,
     title varchar(255) NOT NULL,
@@ -23,8 +25,10 @@ create table Books(
     PRIMARY KEY(stock_id)
 );
 
+ALTER TABLE Books AUTO_INCREMENT = 10000;
+
 create table Reviews(
-    review_id int NOT NULL,
+    review_id int NOT NULL AUTO_INCREMENT,
     stock_id int NOT NULL,
     customer_id int NOT NULL,
     review_text mediumtext NOT NULL,
@@ -33,16 +37,20 @@ create table Reviews(
     foreign key (customer_id) references Customers(customer_id)
 );
 
+ALTER TABLE Reviews AUTO_INCREMENT = 10000;
+
 create table Customers_Orders(
     order_id int NOT NULL AUTO_INCREMENT,
     customer_id int NOT NULL,
-    order_status int NOT NULL,
+    order_status int(1) NOT NULL,
     date_order_placed date NOT NULL,
     order_total double(10,2) NOT NULL,
     txn_id varchar(255) NOT NULL,
     primary key(order_id),
     foreign key (customer_id) references Customers(customer_id)
 );
+
+ALTER TABLE Customers_Orders AUTO_INCREMENT = 100000;
 
 create table Customer_Orders_Books(
     order_id int NOT null,
@@ -63,6 +71,8 @@ create table Addresses(
     iso_country_code varchar(3) NOT NULL,
     primary key(address_id)
 );
+
+ALTER TABLE Addresses AUTO_INCREMENT = 10000;
 
 create table Customer_Addresses(
     customer_id int NOT NULL,

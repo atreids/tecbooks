@@ -155,9 +155,6 @@ if(isset($_POST['empty_cart'])) {
             </div>
         </div>
     </div>
-    <!--for testing, remove from prod -->
-    <?php print_r($_SESSION['cart']);?>
-
     <!-- Includes universal footer -->
     <?php include("./inc/generic_footer.php");?>
     <script src="./js/ajax.js"></script>

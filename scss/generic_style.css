@@ -10769,6 +10769,15 @@ body {
   min-height: 200vh;
 }
 
+h2 {
+  font-family: 'New Baskerville', Baskerville, serif;
+  font-weight: 500;
+}
+
+.margin-top {
+  margin-top: 2vh;
+}
+
 .table .thead-dark {
   background-color: #457b9d;
 }
