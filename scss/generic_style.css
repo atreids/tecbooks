@@ -10815,6 +10815,13 @@ body {
       align-content: center;
 }
 
+.vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 /*Height pickers*/
 .med-height {
   min-height: 40vh;

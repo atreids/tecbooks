@@ -12,8 +12,26 @@ if(!isset($_SESSION['cart'])){
 
 <head>
     <?php include("./inc/generic_header.php");?>
-
     <title>Tecbooks</title>
+    <script>
+    function paymentSuccess(txn_id, total) {
+        var xhttp;
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        } else {
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("pp").innerHTML =
+                    "<h2>Feel free to leave this page</h2><br><a href=\"./index.php\" class=\"btn btn-primary\">Home</a>";
+                document.getElementById("checkout_box").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "./php/payment_success.php?txn_id=" + txn_id + "&total=" + total, true);
+        xhttp.send();
+    }
+    </script>
 </head>
 
 <body>
@@ -22,9 +40,8 @@ if(!isset($_SESSION['cart'])){
     <div class="container buffer-top">
         <div class="row center-flex">
             <h2>Checkout</h2>
-            <?php echo$_SESSION['test'];
-                    echo'hello'; ?>
         </div>
+        <div id="checkout_box"></div>
         <div class="row">
             <div class="col-sm">
                 <table class="table">
@@ -81,7 +98,7 @@ if(!isset($_SESSION['cart'])){
                     </tbody>
                 </table>
             </div>
-            <div class="col-sm center-flex">
+            <div id="pp" class="col-sm center-flex vertical">
                 <div id="paypal-button-container"></div>
                 <script
                     src="https://www.paypal.com/sdk/js?client-id=AcyGNb8WQN4rcN8FigD3HQClEBw2aloCcgL8llfC_35S5gaO4DGTWKIe95Ay82jWNx89MfeSgaxjb-vm&currency=GBP"
@@ -99,15 +116,15 @@ if(!isset($_SESSION['cart'])){
                     createOrder: function(data, actions) {
                         return actions.order.create({
                             purchase_units: [{
-                                amount: {
-                                    value: \''.$ttotal.'\'
-                                }
+                                amount: { value: \''.$ttotal.'\'}
                             }]
+                            
                         });
                     },
                     onApprove: function(data, actions) {
                         return actions.order.capture().then(function(details) {
-                            alert(\'Payment Successful\');
+                            var txn_id = details.id
+                            paymentSuccess(txn_id, '.$ttotal.')
                         });
                     }
                 }).render(\'#paypal-button-container\');
@@ -117,6 +134,7 @@ if(!isset($_SESSION['cart'])){
     </div>
                 ';?>
                         <?php include("./inc/generic_footer.php");?>
+                        <script src="./js/ajax.js"></script>
 </body>
 
 </html>

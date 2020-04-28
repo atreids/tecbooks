@@ -9,3 +9,5 @@ is an inhospitable and sparsely populated desert wasteland, it is the only sourc
 ("Secret Seaside Escape", "Heidi Swain", 9781471185700, "Escape to the seaside with the brand new novel from Heidi Swain, 
 the Sunday Times bestselling author of feel-good women’s fiction!", "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ_wO7iDAklnRdbGAK6vUkLvRuOg3H56uksrkgS0ulQRjvfeMJN", 5, 8.99, "New,Bestseller,Romance");
 
+insert into Customers (firstname, surname, hashed_pass, email, user_type) values
+('Tester', 'Lastname', 'password', 'test@email.com',0);

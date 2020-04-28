@@ -1,14 +1,10 @@
-AcU44R-o3pZ2gQGfZt-UgpWCXE0O-HmlGirXcXtkxTbMXf6P6WAK45uhZ9lkHSNPSVKQ8TCbRI5lea7u
-
-secret
-EDmDV3Rf4mGbdbZZLFw2E1DiQw7pewZqVdKmgRXQxOoeAwwspblUsFEtyg7_Pmkp9KCsijZnNes9OPC_
-
-sb-bzyso1486839@business.example.com
-
-
 Sandbox buyer:
 Email:sb-fj1y81478441@personal.example.com
 Password:4|]$}?Bu
 
+sandbox merchant:
+sb-bzyso1486839@business.example.com
+wRqq3H!<
 
-Identity Token: azj5yWgE_VyOufU0BeF7-7TaIcphBsaiuJAGSL3JpHu9zQ2GKEMA0E55RX8
+Client ID:
+AcyGNb8WQN4rcN8FigD3HQClEBw2aloCcgL8llfC_35S5gaO4DGTWKIe95Ay82jWNx89MfeSgaxjb-vm
