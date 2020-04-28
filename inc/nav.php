@@ -2,7 +2,7 @@
 
 </div>
 <div class="container-fluid center-flex">
-    <a class="nav-link" href="./index.php">
+    <a class="nav-link-l" href="./index.php">
         <h1 class="logo">TecBooks</h1>
     </a>
 </div>
@@ -13,24 +13,28 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="./index.php">HOME <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link" href="./index.php">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./browse.php?tags=Bestsellers">BESTSELLERS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./browse.php?tags=ComputerScience">COMPUTER SCIENCE</a>
+                <a class="nav-link" href="./browse.php">BROWSE</a>
             </li>
         </ul>
         <form class="form-inline mr-1">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto flex-row-reverse">
             <?php
                         if(isset($_SESSION['login'])){
-                            echo '<li class="nav-item"><a class="nav-link" href="./cart.php">CART</a></li>';
+                            $cart_number = 0;
+                            if(isset($_SESSION['cart']) and !empty($_SESSION['cart'])){
+                                for($x=1;$x <= count($_SESSION['cart']); $x = $x + 2) {
+                                
+                                $cart_number = $cart_number + $_SESSION['cart'][$x];
+                                }
+                            }
+                            echo '<li class="nav-item"><a class="nav-link" href="./cart.php">CART('.$cart_number.')</a></li>';
                             echo '<li class="nav-item"><a class="nav-link" href="./account.php"><svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
                             <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>

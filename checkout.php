@@ -36,9 +36,9 @@ if(!isset($_SESSION['cart'])){
 
 <body>
     <?php include("./inc/nav.php");?>
-
-    <div class="container buffer-top">
-        <div class="row center-flex">
+    <div class="container-fluid divider"></div>
+    <div class="container-fluid margin-top">
+        <div class="row ml-3">
             <h2>Checkout</h2>
         </div>
         <div id="checkout_box"></div>
@@ -99,7 +99,7 @@ if(!isset($_SESSION['cart'])){
                 </table>
             </div>
             <div id="pp" class="col-sm center-flex vertical">
-                <div id="paypal-button-container"></div>
+                <div id="paypal-button-container" class="w-75"></div>
                 <script
                     src="https://www.paypal.com/sdk/js?client-id=AcyGNb8WQN4rcN8FigD3HQClEBw2aloCcgL8llfC_35S5gaO4DGTWKIe95Ay82jWNx89MfeSgaxjb-vm&currency=GBP"
                     data-sdk-integration-source="button-factory">
@@ -107,7 +107,8 @@ if(!isset($_SESSION['cart'])){
                 <script>
                 paypal.Buttons({
                     style: {
-                        shape: \'rect\',
+                        size: \'responsive\',
+                        shape: \'pill\',
                         color: \'gold\',
                         layout: \'vertical\',
                         label: \'paypal\',

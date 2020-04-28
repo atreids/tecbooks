@@ -14,21 +14,19 @@ require("./php/connection.php");
 
 <body>
     <?php include("./inc/nav.php");?>
-    <div class="container-fluid parrallax img-2 center-flex med-height">
-        <div class="center-flex"><span id="lander"><em>Books For The Mind And Soul</em></span></div>
-    </div>
     <?php
-        $sql = "SELECT * FROM Books";
-        $data = mysqli_query($db, $sql);
-        if (!$data) {
-            printf("Error: %s\n", mysqli_error($db));
-            exit();
-        }
-        
-        $data2 = mysqli_query($db, $sql);
-        ?>
+    $sql = "SELECT * FROM Books";
+    $data = mysqli_query($db, $sql);
+    if (!$data) {
+        printf("Error: %s\n", mysqli_error($db));
+        exit();
+    }
+    
+    $data2 = mysqli_query($db, $sql);
+    ?>
+    <div class="container-fluid divider"></div>
 
-    <div class="container">
+    <div class="container margin-top">
         <div class="row center-flex">
             <h2><em>All Books</em></h2>
         </div>

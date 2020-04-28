@@ -24,7 +24,7 @@ $data2 = mysqli_query($db, $sql);
                     echo '
                     <div class="col-sm">
                     <div class="card" style="width: 18rem;">
-                        <img src="'.$array['cover'].'" class="card-img-top" alt="Book Cover">
+                        <img src="'.$array['cover'].'" class="card-img-top img-card" alt="Book Cover">
                         <div class="card-body">
                             <h5 class="card-title">'.$array['title'].'</h5>
                             <h6 class="card-subtitle mb-2 text-muted">'.$array['author'].'</h6>
@@ -52,7 +52,7 @@ $data2 = mysqli_query($db, $sql);
                     echo '
                     <div class="col-sm">
                     <div class="card" style="width: 18rem;">
-                        <img src="'.$array2['cover'].'" class="card-img-top" alt="Book Cover">
+                        <img src="'.$array2['cover'].'" class="card-img-top img-card" alt="Book Cover">
                         <div class="card-body">
                             <h5 class="card-title">'.$array2['title'].'</h5>
                             <h6 class="card-subtitle mb-2 text-muted">'.$array2['author'].'</h6>

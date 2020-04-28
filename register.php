@@ -44,10 +44,11 @@ if(isset($_POST['submit'])) {
 
 <body>
     <?php include("./inc/nav.php");?>
+    <div class="container-fluid divider"></div>
 
-    <div class="container">
+    <div class="container center-flex">
         <form class="form-signin" action="" method="post">
-            <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Register</h1>
 
             <label for="inputEmail" class="sr-only">Email address</label>
             <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address"
@@ -65,14 +66,8 @@ if(isset($_POST['submit'])) {
             <label for="repeatpassword" class="sr-only">Repeat Password</label>
             <input class="form-control" type="password" id="repeatpassword" name="repeatpassword"
                 placeholder="Repeat Password" required>
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Register</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2019-2020</p>
+            <p class="mt-5 mb-3 text-muted">Tecbooks &copy; 2019-2020</p>
         </form>
         <?php
     if(isset($_GET['uex'])) {

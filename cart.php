@@ -56,8 +56,9 @@ if(isset($_POST['empty_cart'])) {
     <?php
         include("./inc/nav.php");
     ?>
-    <div class="container-fluid buffer-top">
-        <div class="row center-flex">
+    <div class="container-fluid divider"></div>
+    <div class="container-fluid margin-top margin-bottom">
+        <div class="row ml-3">
             <h2>Your Cart</h2>
         </div>
         <div class="row">
@@ -136,22 +137,19 @@ if(isset($_POST['empty_cart'])) {
                     </tbody>
                 </table>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm center-flex">
-                <form action="#" method="post">
-                    <button class="btn btn-warning" name="empty_cart">Empty Cart</button>
-                </form>
-            </div>
-            <div class="col-sm"></div>
-            <div class="col-sm center-flex">
+            <div class="col-sm d-flex flex-column">
                 <?php 
+
                     if(isset($_SESSION['cart']) and !empty($_SESSION['cart'])) {
-                        echo '<a href="checkout.php" class="btn btn-primary">Checkout</a>';
+                        echo '<a href="checkout.php" class="btn btn-primary margin-bottom">Checkout</a>';
                     }else {
-                        echo '<a href="#" class="btn btn-secondary disabled">Checkout</a>';
+                        echo '<a href="#" class="btn btn-secondary disabled margin-bottom">Checkout</a>';
                     };
                 ?>
+                <form action="#" method="post">
+                    <button class="btn btn-warning" name="empty_cart" style="width:100%;">Empty Cart</button>
+                </form>
+                <h3 class="margin-top">Subtotal: £<?php echo $total; ?></h3>
             </div>
         </div>
     </div>

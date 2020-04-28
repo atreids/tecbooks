@@ -1,5 +1,7 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+$blue: #e63946;
 
+
+@import "../node_modules/bootstrap/scss/bootstrap";
 $queenblue: #457b9d;
 $spacecadet: #1d3557;
 $lightblue: #a8dadc;
@@ -12,7 +14,7 @@ $bg: #F7F7F9;
 
 body {
     background-color: $bg;
-    min-height: 200vh;
+    height: 100%;
 }
 
 h2 {
@@ -20,8 +22,22 @@ h2 {
     font-weight: 500;
 }
 
+.divider {
+    min-height: 0.5vh;
+    background-color: $spacecadet;
+    margin-top: 2vh;
+}
+
 .margin-top {
     margin-top: 2vh;
+}
+
+.margin-top-lg {
+    margin-top: 6vh;
+}
+
+.margin-bottom {
+    margin-bottom: 3vh;
 }
 
 .table .thead-dark {
@@ -33,10 +49,24 @@ h2 {
     background-color: $textgray;
 }
 
+.img-card {
+    max-height: 380px;
+}
+
 /*Navbar stuff*/
 .top-line {
     min-height: 1vh;
     background-color: $red;
+}
+
+.nav-link-l {
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link-l:hover,
+.nav-link-l:focus {
+    text-decoration: none;
 }
 
 .logo {
@@ -47,11 +77,21 @@ h2 {
     font-size: 32px;
     transition: 100ms;
     cursor: pointer;
-    color: $queenblue;
+    color: $spacecadet;
 }
 
 .logo:hover {
     color: $text2;
+}
+
+.nav-link {
+    transition: 115ms;
+}
+
+.nav-link:hover {
+    background-color: $red;
+    color: $textgray;
+    border-radius: 3px;
 }
 
 /*End Navbar stuff*/
@@ -70,6 +110,14 @@ h2 {
 /*Height pickers*/
 .med-height {
     min-height: 40vh;
+}
+
+.lg-height {
+    min-height: 60vh;
+}
+
+.vh-25 {
+    max-height: 25vh;
 }
 
 /*parrallax css*/
@@ -103,6 +151,29 @@ h2 {
 }
 
 /*end of parrallax*/
+
+/*image styling*/
+.vsm-img {
+    max-width: 20vw;
+}
+
+.sm-img {
+    max-width: 35vw;
+}
+
+.med-img {
+    max-width: 45vw;
+}
+
+.circle {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.parrallelogram {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/*end image styling*/
 
 /*Signin/register forms*/
 .form-signin {
