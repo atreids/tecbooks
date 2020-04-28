@@ -85,13 +85,14 @@ h2 {
 }
 
 .nav-link {
+    color: #000;
     transition: 115ms;
 }
 
 .nav-link:hover {
     background-color: $red;
-    color: $textgray;
-    border-radius: 3px;
+    color: #fff;
+    border-radius: 5px;
 }
 
 /*End Navbar stuff*/

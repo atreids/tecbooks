@@ -10838,14 +10838,15 @@ h2 {
 }
 
 .nav-link {
+  color: #000;
   -webkit-transition: 115ms;
   transition: 115ms;
 }
 
 .nav-link:hover {
   background-color: #e63946;
-  color: #494c4e;
-  border-radius: 3px;
+  color: #fff;
+  border-radius: 5px;
 }
 
 /*End Navbar stuff*/
