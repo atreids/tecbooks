@@ -42,24 +42,31 @@ if(isset($_POST['submit'])) {
     <?php include("./inc/nav.php");?>
     <div class="container-fluid divider"></div>
 
-    <div class="container mx-auto h-100">
-        <form class="form-signin" action="" method="post">
+    <div class="container margin-top-lg w-50">
+        <form action="" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address"
-                required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Password"
-                required>
+            <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="john@email.com"
+                    required autofocus>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" name="inputPassword" class="form-control" required>
+            </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
             <p class="mt-5 mb-3 text-muted">Tecbooks &copy; 2019-2020</p>
         </form>
         <?php
-    if(isset($_GET['loginfailed'])) {
-        echo '<h4 style="color:red;margin-top:2px;">Login failed</h4>';
-    } ?>
+            if(isset($_GET['loginfailed'])) {
+                echo '
+                    <div class="alert alert-danger" role="alert">
+                        Login failed.
+                    </div>
+                    ';
+            } 
+        ?>
     </div>
-
     <?php include("./inc/generic_footer.php");?>
 </body>
 

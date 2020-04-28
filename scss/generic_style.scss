@@ -1,16 +1,10 @@
-$blue: #e63946;
-
-
 @import "../node_modules/bootstrap/scss/bootstrap";
-$queenblue: #457b9d;
-$spacecadet: #1d3557;
-$lightblue: #a8dadc;
-$red: #e63946;
-$textgray: #494c4e;
-$text1: #f1faee;
-$text2: #e63946;
 $bg: #F7F7F9;
 
+
+$major_theme: $blue;
+$minor_theme: $yellow;
+$accent: $red;
 
 body {
     background-color: $bg;
@@ -23,9 +17,8 @@ h2 {
 }
 
 .divider {
-    min-height: 0.5vh;
-    background-color: $spacecadet;
-    margin-top: 2vh;
+    min-height: 1px;
+    background-color: $blue;
 }
 
 .margin-top {
@@ -40,13 +33,9 @@ h2 {
     margin-bottom: 3vh;
 }
 
-.table .thead-dark {
-    background-color: $queenblue;
-}
-
 #total {
     color: #fff;
-    background-color: $textgray;
+    background-color: $blue;
 }
 
 .img-card {
@@ -56,7 +45,7 @@ h2 {
 /*Navbar stuff*/
 .top-line {
     min-height: 1vh;
-    background-color: $red;
+    background-color: $blue;
 }
 
 .nav-link-l {
@@ -77,11 +66,11 @@ h2 {
     font-size: 32px;
     transition: 100ms;
     cursor: pointer;
-    color: $spacecadet;
+    color: #000;
 }
 
 .logo:hover {
-    color: $text2;
+    color: $blue;
 }
 
 .nav-link {
@@ -90,7 +79,7 @@ h2 {
 }
 
 .nav-link:hover {
-    background-color: $red;
+    background-color: $blue;
     color: #fff;
     border-radius: 5px;
 }
@@ -145,10 +134,10 @@ h2 {
 #lander {
     font-family: 'New Baskerville', Baskerville, serif;
     background: rgba(1, 1, 1, 0.9);
-    border: 5px solid $text1;
+    border: 5px solid $yellow;
     font-size: 40px;
-    color: $text1;
     padding: 40px 40px;
+    color: #fff;
 }
 
 /*end of parrallax*/
@@ -176,43 +165,6 @@ h2 {
 
 /*end image styling*/
 
-/*Signin/register forms*/
-.form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-}
-
-.form-signin .checkbox {
-    font-weight: 400;
-}
-
-.form-signin .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-}
-
-.form-signin .form-control:focus {
-    z-index: 2;
-}
-
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-}
-
-/*End Signin/register forms*/
 
 @media screen and (min-width: 993px) {
     .buffer-top {

@@ -149,7 +149,11 @@ if(isset($_POST['empty_cart'])) {
                 <form action="#" method="post">
                     <button class="btn btn-warning" name="empty_cart" style="width:100%;">Empty Cart</button>
                 </form>
-                <h3 class="margin-top">Subtotal: £<?php echo $total; ?></h3>
+                <?php
+                if(isset($_SESSION['cart']) and !empty($_SESSION['cart'])) {
+                echo '<h3 class="margin-top">Subtotal: £'.$total.'</h3>';
+                }
+                ?>
             </div>
         </div>
     </div>

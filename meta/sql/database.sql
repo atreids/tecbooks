@@ -64,11 +64,11 @@ create table Customer_Orders_Books(
 
 create table Addresses(
     address_id int NOT NULL AUTO_INCREMENT,
-    building_number varchar(10),
-    street_name varchar(255) NOT NULL,
+    address1 varchar(255),
+    address2 varchar(255) NOT NULL,
     city varchar(255) NOT NULL,
     zip_postcode varchar(255) NOT NULL,
-    iso_country_code varchar(3) NOT NULL,
+    country varchar(255) NOT NULL,
     primary key(address_id)
 );
 

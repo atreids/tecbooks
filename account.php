@@ -25,7 +25,10 @@ require("./php/connection.php");
                 <a class="nav-link" data-toggle="tab" href="#addresses">Your Addresses</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#advanced">Advanced</a>
+                <a class="nav-link" data-toggle="tab" href="#history">Purchase History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -64,7 +67,8 @@ require("./php/connection.php");
 
 
             </div>
-            <div class="tab-pane fade" id="advanced">...</div>
+            <div class="tab-pane fade" id="history">...</div>
+            <div class="tab-pane fade" id="reviews">...</div>
         </div>
     </div>
 
