@@ -74,8 +74,6 @@ if(!isset($_SESSION['cart'])){
                             </tr>
                             ';
                         };
-                        $ttotal = 0.00;
-                        $ttotal = $total + 3;
                         echo '
                         <tr>
                             <td></td>
@@ -84,13 +82,13 @@ if(!isset($_SESSION['cart'])){
                         </tr>
                         <tr>
                             <td></td>
-                            <td>Processing: </td>
-                            <td>£3.00</td>
+                            <td>Shipping: </td>
+                            <td>Free!</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>Total: </td>
-                            <td id="total">£'. $ttotal .'</td>
+                            <td id="total">£'. $total .'</td>
                         </tr>
                         
                         ';
@@ -117,7 +115,7 @@ if(!isset($_SESSION['cart'])){
                     createOrder: function(data, actions) {
                         return actions.order.create({
                             purchase_units: [{
-                                amount: { value: \''.$ttotal.'\'}
+                                amount: { value: \''.$total.'\'}
                             }]
                             
                         });
@@ -125,7 +123,7 @@ if(!isset($_SESSION['cart'])){
                     onApprove: function(data, actions) {
                         return actions.order.capture().then(function(details) {
                             var txn_id = details.id
-                            paymentSuccess(txn_id, '.$ttotal.')
+                            paymentSuccess(txn_id, '.$total.')
                         });
                     }
                 }).render(\'#paypal-button-container\');

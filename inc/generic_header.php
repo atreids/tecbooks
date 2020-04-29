@@ -25,6 +25,11 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<!-- placed here to preload it before customer arrives at checkout -->
+<script
+    src="https://www.paypal.com/sdk/js?client-id=AcyGNb8WQN4rcN8FigD3HQClEBw2aloCcgL8llfC_35S5gaO4DGTWKIe95Ay82jWNx89MfeSgaxjb-vm&currency=GBP"
+    data-sdk-integration-source="button-factory">
+</script>
 
 <?php
 #error reporting, to be removed for prod

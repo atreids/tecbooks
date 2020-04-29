@@ -11,7 +11,7 @@ $data2 = mysqli_query($db, $sql);
 
 <div class="container">
     <div class="row margin-top">
-        <h2><em>Non-Fiction</em></h2>
+        <h2 class="baskerville"><em>Non-Fiction</em></h2>
     </div>
     <div class="row">
         <?php 
@@ -23,7 +23,7 @@ $data2 = mysqli_query($db, $sql);
                 if(in_array("NonFiction", $array_of_current_books_tags)) {
                     echo '
                     <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card margin-top" style="width: 18rem;">
                         <img src="'.$array['cover'].'" class="card-img-top img-card" alt="Book Cover">
                         <div class="card-body">
                             <h5 class="card-title">'.$array['title'].'</h5>
@@ -39,7 +39,7 @@ $data2 = mysqli_query($db, $sql);
         ?>
     </div>
     <div class="row margin-top">
-        <h2><em>Fiction</em></h2>
+        <h2 class="baskerville"><em>Fiction</em></h2>
     </div>
     <div class="row">
         <?php 
@@ -51,7 +51,7 @@ $data2 = mysqli_query($db, $sql);
                 if(in_array("Fiction", $array_of_current_books_tags)) {
                     echo '
                     <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card margin-top" style="width: 18rem;">
                         <img src="'.$array2['cover'].'" class="card-img-top img-card" alt="Book Cover">
                         <div class="card-body">
                             <h5 class="card-title">'.$array2['title'].'</h5>

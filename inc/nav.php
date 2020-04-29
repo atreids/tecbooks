@@ -14,17 +14,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-4 mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./index.php">HOME</a>
+                <a class="nav-link" href="./index.php">
+                    Home
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./browse.php">BROWSE</a>
+                <a class="nav-link" href="./browse.php">
+                    Browse Books
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./about.php">
+                    About Tecbooks
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./contact.php">
+                    Contact Us
+                </a>
             </li>
         </ul>
-        <form class="form-inline mr-1">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <ul class="navbar-nav mr-4 ml-auto flex-row-reverse">
+        <ul class="navbar-nav mr-4 ml-auto">
             <?php
                         if(isset($_SESSION['login'])){
                             $cart_number = 0;
@@ -34,32 +44,20 @@
                                 $cart_number = $cart_number + $_SESSION['cart'][$x];
                                 }
                             }
-                            echo '<li class="nav-item"><a class="nav-link" href="./cart.php">CART('.$cart_number.')</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="./cart.php">Cart</a></li>';
                             echo '<li class="nav-item"><a class="nav-link" href="./account.php"><svg class="bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
                             <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                             <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
                           </svg></a></li>';
+                          echo '<li class="nav-item"><a class="nav-link" href="./php/logout.php">Logout</a></li>';
                         } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="./login.php">LOGIN</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./register.php">REGISTER</a></li>';
+                            echo '
+                            <li class="nav-item"><a class="nav-link" href="./register.php">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./login.php">Login</a></li>
+                            ';
                         };
                     ?>
-            <li class="nav-item dropdown pull-right">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    MORE
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./contact.php">CONTACT US</a>
-                    <a class="dropdown-item" href="./about.php">ABOUT US</a>
-                    <?php if(isset($_SESSION['login'])) {
-                        echo '<div class="dropdown-divider"></div>';
-                        echo '<a class="dropdown-item" href="./php/logout.php">LOGOUT</a>';
-                    }
-                    ?>
-                </div>
-            </li>
         </ul>
     </div>
 </nav>

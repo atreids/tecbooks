@@ -15,7 +15,7 @@ require("./php/connection.php");
 <body>
     <?php include("./inc/nav.php");?>
     <div class="container">
-        <h2>Contact Us</h2>
+        <h2 class="display-2">Contact Us</h2>
     </div>
 
     <?php include("./inc/generic_footer.php");?>

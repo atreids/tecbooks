@@ -1,3 +1,6 @@
+$blue: #007bff;
+$navbar-light-color:rgba(1, 1, 1, 1);
+$navbar-light-hover-color: rgba($blue, .7);
 @import "../node_modules/bootstrap/scss/bootstrap";
 $bg: #F7F7F9;
 
@@ -11,9 +14,8 @@ body {
     height: 100%;
 }
 
-h2 {
+.baskerville {
     font-family: 'New Baskerville', Baskerville, serif;
-    font-weight: 500;
 }
 
 .divider {
@@ -79,8 +81,7 @@ h2 {
 }
 
 .nav-link:hover {
-    background-color: $blue;
-    color: #fff;
+    color: #000;
     border-radius: 5px;
 }
 
@@ -134,7 +135,7 @@ h2 {
 #lander {
     font-family: 'New Baskerville', Baskerville, serif;
     background: rgba(1, 1, 1, 0.9);
-    border: 5px solid $yellow;
+    border: 5px solid #fff;
     font-size: 40px;
     padding: 40px 40px;
     color: #fff;
