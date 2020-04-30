@@ -44,6 +44,9 @@
                                 $cart_number = $cart_number + $_SESSION['cart'][$x];
                                 }
                             }
+                            if($_SESSION['login'] == 'admin'){
+                                echo '<li class="nav-item"><a class="nav-link" href="./admin.php">Admin</a></li>';
+                            }
                             echo '<li class="nav-item"><a class="nav-link" href="./cart.php">Cart</a></li>';
                             echo '<li class="nav-item"><a class="nav-link" href="./account.php"><svg class="bi bi-people-circle" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>

@@ -201,8 +201,9 @@ require("./php/connection.php");
                     <img src="./img/bookshelves.jpg" class="circle vsm-img">
                 </div>
             </div>
-
-            <?php include("./inc/generic_footer.php");?>
+        </div>
+    </div>
+    <?php include("./inc/generic_footer.php");?>
 </body>
 
 </html>

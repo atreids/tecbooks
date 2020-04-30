@@ -1,4 +1,5 @@
 <?php
+#AJAX page, used for account.php email change
 session_start();
 require("./connection.php");
 $user_id = $_SESSION['user_id'];

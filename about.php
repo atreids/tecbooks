@@ -14,6 +14,7 @@ require("./php/connection.php");
 
 <body>
     <?php include("./inc/nav.php");?>
+    <div class="container-fluid divider"></div>
     <div class="container">
         <h2>About Tecbooks</h2>
     </div>

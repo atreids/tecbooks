@@ -1,5 +1,6 @@
 <?php
 #Cart functions by storing the stock_id of the book in the cart, the index directly +1 of the stock_id is the quantity of that book to order.
+#Needed for all pages that allow you to add books to cart on
 session_start();
 $stock_id = $_GET['stocknumber']; #The stock number of the book being added was passed in through GET
 if(!isset($_SESSION['cart'])) {

@@ -31,19 +31,3 @@ function loadDocCart(stock_id) {
   xhttp.open("GET", "./php/add_cart.php?stocknumber=" + stock_id, true);
   xhttp.send();
 }
-
-function paymentSuccessful() {
-  var xhttp;
-  if (window.XMLHttpRequest) {
-    xhttp = new XMLHttpRequest();
-  } else {
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("checkout_box").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "./php/payment_success.php", true);
-  xhttp.send();
-}

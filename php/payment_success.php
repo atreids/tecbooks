@@ -1,4 +1,10 @@
 <?php
+#
+#
+#AJAX page, used when payment has successfully been processed to update database
+#
+#
+#
 session_start(); //Starts session, required for access to customers_id
 require("./connection.php"); //includes database connection
 $user_id = $_SESSION['user_id'];

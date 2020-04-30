@@ -32,6 +32,7 @@ create table Reviews(
     stock_id int NOT NULL,
     customer_id int NOT NULL,
     review_text mediumtext NOT NULL,
+    stars int NOT NULL,
     primary key(review_id),
     foreign key (stock_id) references Books(stock_id),
     foreign key (customer_id) references Customers(customer_id)
@@ -77,6 +78,7 @@ ALTER TABLE Addresses AUTO_INCREMENT = 10000;
 create table Customer_Addresses(
     customer_id int NOT NULL,
     address_id int NOT NULL,
+    current_address int NOT NULL,
     primary key(customer_id, address_id),
     foreign key (customer_id) references Customers(customer_id),
     foreign key (address_id) references Addresses(address_id)
