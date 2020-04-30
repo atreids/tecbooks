@@ -17,6 +17,7 @@ require("./php/connection.php");
     <div class="container-fluid divider"></div>
     <div class="container">
         <h2>About Tecbooks</h2>
+        <p>Tecbooks is an specialist bookstore in technology and educational books for all ages.</p>
     </div>
 
     <?php include("./inc/generic_footer.php");?>

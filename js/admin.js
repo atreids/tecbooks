@@ -26,7 +26,6 @@ function toggle_new_book_form() {
 }
 
 function new_book() {
-  alert("New book");
   //Called when new book form is submitted, gathers values
   //and submits to a php page insert_book.php AJAX style :)
   var title = document.getElementById("title").value;
