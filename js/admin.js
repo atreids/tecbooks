@@ -14,6 +14,12 @@ function toggle_existing_books() {
     "alert alert-success w-50 margin-top d-none";
 }
 
+function toggle_new_admin_form() {
+  document.getElementById("new_admin_form").classList.toggle("d-none");
+  document.getElementById("existing_admins").className =
+    "container-fluid margin-top d-none";
+}
+
 function toggle_new_book_form() {
   //Toggles display of new book form, called when button "New Book" is pressed
   document.getElementById("new_book_form").classList.toggle("d-none");
@@ -91,6 +97,65 @@ function display_book(stock_id) {
   xhttp.send("stock_id=" + stock_id);
 }
 
+function display_admin(customer_id) {
+  //called when an admin is selected from <select></select>
+  var xhttp2;
+  if (window.XMLHttpRequest) {
+    xhttp2 = new XMLHttpRequest();
+  } else {
+    xhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp2.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("admin_table_body").innerHTML = this.responseText;
+      document.getElementById("existing_admins").className =
+        "container-fluid margin-top";
+    }
+  };
+  xhttp2.open("POST", "./php/display_amin.php", true);
+  xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp2.send("customer_id=" + customer_id);
+}
+
+function display_customer(customer_id) {
+  //called when an admin is selected from <select></select>
+  var xhttp2;
+  if (window.XMLHttpRequest) {
+    xhttp2 = new XMLHttpRequest();
+  } else {
+    xhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp2.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("customers_orders").innerHTML = this.responseText;
+      document.getElementById("customers_orders").className =
+        "container-fluid margin-top";
+    }
+  };
+  xhttp2.open("POST", "./php/display_customer.php", true);
+  xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp2.send("customer_id=" + customer_id);
+}
+
+function change_order_status(order_id, status) {
+  //called when an admin is selected from <select></select>
+  var xhttp2;
+  if (window.XMLHttpRequest) {
+    xhttp2 = new XMLHttpRequest();
+  } else {
+    xhttp2 = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp2.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("changed_status_alert").className =
+        "alert alert-success w-50 margin-top";
+    }
+  };
+  xhttp2.open("POST", "./php/change_order_status.php", true);
+  xhttp2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp2.send("order_id=" + order_id + "&status=" + status);
+}
+
 function delete_book(stock_id) {
   //called from display_book.php
   var xhttp;
@@ -103,6 +168,9 @@ function delete_book(stock_id) {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("book_edited_alert").className =
         "alert alert-success w-50 margin-top";
+      document.getElementById(
+        "book_edited_alert"
+      ).innerHTML = this.responseText;
       document.getElementById("existing_book_table").className =
         "table margin-top d-none";
     }
@@ -110,6 +178,30 @@ function delete_book(stock_id) {
   xhttp.open("POST", "./php/delete_book.php", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("stock_id=" + stock_id);
+}
+
+function delete_admin(customer_id) {
+  //called from display_book.php
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    xhttp = new XMLHttpRequest();
+  } else {
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("admin_edited_alert").className =
+        "alert alert-success w-50 margin-top";
+      document.getElementById(
+        "admin_edited_alert"
+      ).innerHTML = this.responseText;
+      document.getElementById("existing_admins").className =
+        "container-fluid margin-top d-none";
+    }
+  };
+  xhttp.open("POST", "./php/delete_admin.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("customer_id=" + customer_id);
 }
 
 function show_desc() {
