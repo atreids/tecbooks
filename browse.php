@@ -30,7 +30,7 @@ require("./php/connection.php");
         <div class="row center-flex">
             <h2><em>All Books</em></h2>
         </div>
-        <div class="row">
+        <div class="row d-flex flex-row flex-wrap">
             <?php 
             $a = 0;
             while($array = mysqli_fetch_array($data)) { 
@@ -38,8 +38,8 @@ require("./php/connection.php");
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
                     echo '
-                    <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                    
+                    <div class="card margin-top ml-5" style="width: 18rem;">
                         <img src="'.$array['cover'].'" class="card-img-top" alt="Book Cover">
                         <div class="card-body">
                             <h5 class="card-title">'.$array['title'].'</h5>
@@ -48,7 +48,7 @@ require("./php/connection.php");
                             <p id="btn_'.$array['stock_id'].'"><button class="btn btn-primary" onclick="loadDocCart('.$array['stock_id'].')">Add to Cart</button></p>
                         </div>
                     </div>
-                </div>'; 
+                '; 
                 $a++;
             }
         ?>

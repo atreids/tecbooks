@@ -13,7 +13,7 @@ $data2 = mysqli_query($db, $sql);
     <div class="row margin-top">
         <h2 class="baskerville"><em>Non-Fiction</em></h2>
     </div>
-    <div class="row">
+    <div class="row d-flex flex-wrap flex-row">
         <?php 
             $a = 0;
             while($array = mysqli_fetch_array($data)) { 
@@ -22,17 +22,17 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
                 if(in_array("NonFiction", $array_of_current_books_tags)) {
                     echo '
-                    <div class="col-sm">
-                    <div class="card margin-top" style="width: 18rem;">
+                    
+                    <div class="card margin-top ml-5" style="width: 18rem;">
                         <img src="'.$array['cover'].'" class="card-img-top img-card" alt="Book Cover">
                         <div class="card-body">
-                            <h5 class="card-title">'.$array['title'].'</h5>
+                            <a href="./book.php?id='.$array['stock_id'].'"><h5 class="card-title">'.$array['title'].'</h5></a>
                             <h6 class="card-subtitle mb-2 text-muted">'.$array['author'].'</h6>
                             <p class="card-text">£'.$array['product_price'].'</p>
                             <p id="btn_'.$array['stock_id'].'"><button class="btn btn-primary" onclick="loadDocCart('.$array['stock_id'].')">Add to Cart</button></p>
                         </div>
                     </div>
-                </div>';
+                ';
                 }
                 $a++;
             }
@@ -41,7 +41,7 @@ $data2 = mysqli_query($db, $sql);
     <div class="row margin-top">
         <h2 class="baskerville"><em>Fiction</em></h2>
     </div>
-    <div class="row">
+    <div class="row d-flex flex-wrap flex-row">
         <?php 
             $a = 0;
             while($array2 = mysqli_fetch_array($data2)) { 
@@ -50,17 +50,17 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
                 if(in_array("Fiction", $array_of_current_books_tags)) {
                     echo '
-                    <div class="col-sm">
-                    <div class="card margin-top" style="width: 18rem;">
+                    
+                    <div class="card margin-top ml-5" style="width: 18rem;">
                         <img src="'.$array2['cover'].'" class="card-img-top img-card" alt="Book Cover">
                         <div class="card-body">
-                            <h5 class="card-title">'.$array2['title'].'</h5>
+                            <a href="./book.php?id='.$array2['stock_id'].'"><h5 class="card-title">'.$array2['title'].'</h5></a>
                             <h6 class="card-subtitle mb-2 text-muted">'.$array2['author'].'</h6>
                             <p class="card-text">£'.$array2['product_price'].'</p>
                             <p id="btn_'.$array2['stock_id'].'"><button class="btn btn-primary" onclick="loadDocCart('.$array2['stock_id'].')">Add to Cart</button></p>
                         </div>
                     </div>
-                </div>';
+                ';
                 }
                 $a++;
             }
