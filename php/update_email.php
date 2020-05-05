@@ -4,7 +4,7 @@ session_start();
 require("./connection.php");
 #Redirects if not logged in
 if(!isset($_SESSION['login'])){
-    header("location: ./index.php");
+    header("location: ../index.php");
 }
 $user_id = $_SESSION['user_id'];
 $new_email = $_GET['new_email'];

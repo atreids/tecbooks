@@ -39,6 +39,10 @@ input[type=number] {
     background-color: $black;
 }
 
+.cs-button:active {
+    background-color: grey;
+}
+
 .margin-top {
     margin-top: 2vh;
 }

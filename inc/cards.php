@@ -11,7 +11,7 @@ $data2 = mysqli_query($db, $sql);
 
 <div class="container">
     <div class="row margin-top">
-        <h2 class="baskerville"><em>Non-Fiction</em></h2>
+        <h2 class="baskerville"><em>Maths Books</em></h2>
     </div>
     <div class="row d-flex flex-wrap flex-row">
         <?php 
@@ -20,7 +20,7 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_tags[$a] = $array['tags'];
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
-                if(in_array("NonFiction", $array_of_current_books_tags)) {
+                if(in_array("Math", $array_of_current_books_tags)) {
                     echo '
                     
                     <div class="card margin-top ml-5" style="width: 18rem;">
@@ -39,7 +39,7 @@ $data2 = mysqli_query($db, $sql);
         ?>
     </div>
     <div class="row margin-top">
-        <h2 class="baskerville"><em>Fiction</em></h2>
+        <h2 class="baskerville"><em>Computer Science Books</em></h2>
     </div>
     <div class="row d-flex flex-wrap flex-row">
         <?php 
@@ -48,7 +48,7 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_tags[$a] = $array2['tags'];
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
-                if(in_array("Fiction", $array_of_current_books_tags)) {
+                if(in_array("ComputerScience", $array_of_current_books_tags)) {
                     echo '
                     
                     <div class="card margin-top ml-5" style="width: 18rem;">

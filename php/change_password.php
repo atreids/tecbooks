@@ -4,7 +4,7 @@ require("./connection.php");
 require("./password.php");
 #Redirects if not logged in
 if(!isset($_SESSION['login'])){
-    header("location: ./index.php");
+    header("location: ../index.php");
 }
 
 $customer_id = $_SESSION['user_id'];

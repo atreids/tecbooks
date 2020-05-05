@@ -4,7 +4,7 @@
 session_start();
 #Redirects if not an admin
 if($_SESSION['login'] != "admin"){
-    header("location: ./index.php");
+    header("location: ../index.php");
 }
 require("./connection.php");
 $customer_id = $_POST['customer_id'];

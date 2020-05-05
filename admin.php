@@ -150,7 +150,7 @@ if(isset($_POST['submit_admin'])) {
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="isbn">ISBN (ISBN-10 Format)</label>
-                                <input type="number" class="form-control" id="isbn" name="isbn" placeholder="ISBN-10"
+                                <input type="text" class="form-control" id="isbn" name="isbn" placeholder="ISBN-10"
                                     required>
                             </div>
                             <div class="form-group col-md-4">
@@ -173,7 +173,7 @@ if(isset($_POST['submit_admin'])) {
                             <label for="desc">Book Description</label>
                             <textarea class="form-control" id="desc" name="desc" rows="5" required></textarea>
                         </div>
-                        <input type="submit" name="submit" class="btn btn-primary">
+                        <input type="submit" name="submit" class="btn btn-primary cs-button">
                         <p class="mt-5 mb-3 text-muted">Tecbooks &copy; 2019-2020</p>
                     </form>
 

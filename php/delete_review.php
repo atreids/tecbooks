@@ -2,7 +2,7 @@
 session_start();
 #Redirects if not an admin
 if(!isset($_SESSION['login'])){
-    header("location: ./index.php");
+    header("location: ../index.php");
 }
 require("./connection.php");
 $review_id = $_POST['review_id'];

@@ -7,7 +7,7 @@
 //
 #Redirects if not an admin
 if($_SESSION['login'] != "admin"){
-    header("location: ./index.php");
+    header("location: ../index.php");
 }
 require("./connection.php");
 $title = $_POST['title'];
@@ -23,7 +23,7 @@ $insertion_sql =
 "INSERT INTO Books(title, author, isbn, book_desc, cover, quantity_stock, product_price, tags) VALUES 
 (\"".$title."\", 
 \"".$author."\", 
-".$isbn.", 
+\"".$isbn."\", 
 \"".$desc."\",
 \"".$cover."\", 
 ".$quantity.", 

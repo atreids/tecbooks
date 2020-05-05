@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
             <div class="col-sm ml-2">
                 <h4>Book Description</h4>
                 <p><?php echo $book_array['book_desc']; ?></p>
-
+                <?php if(isset($_SESSION['login'])) { echo '
                 <form action="" method="post" class="margin-top-lg">
                     <div class="form-group w-50">
                         <h4>Leave a review</h4>
@@ -80,6 +80,8 @@ if(isset($_POST['submit'])){
                         </div>
                     </div>
                 </form>
+                ';}?>
+
             </div>
         </div>
         <div class="row margin-top margin-bottom d-flex flex-row flex-wrap">
