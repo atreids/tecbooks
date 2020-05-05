@@ -26,12 +26,26 @@ require("./php/connection.php");
     ?>
     <div class="container-fluid divider"></div>
 
-    <div class="container margin-top">
+    <div class="container-fluid margin-top">
         <div class="row center-flex">
-            <h2><em>All Books</em></h2>
+            <div class="col-sm-3">
+
+            </div>
+            <div class="col-sm-6 center-flex">
+                <h2><em>Browse Books</em></h2>
+            </div>
+            <div class="col-sm-3"></div>
         </div>
-        <div class="row d-flex flex-row flex-wrap">
-            <?php 
+        <div class="row">
+            <div class="col-sm-3 margin-top">
+                <div class="form-group">
+                    <label for="searchbar" class="sr-only">Search Bar</label>
+                    <input type="text" id="searchbar" class="form-control" placeholder="Search">
+                    <input type="submit" name="submit" class="btn btn-sm btn-primary margin-top" onClick="searchbar()">
+                </div>
+            </div>
+            <div id="book_display" class="col-sm-9 d-flex flex-row flex-wrap">
+                <?php 
             $a = 0;
             while($array = mysqli_fetch_array($data)) { 
                 $array_of_tags[$a] = $array['tags'];
@@ -52,10 +66,12 @@ require("./php/connection.php");
                 $a++;
             }
         ?>
-        </div>
-    </div>
+            </div>
 
-    <?php include("./inc/generic_footer.php");?>
+        </div>
+
+        <script src="./js/search.js"></script>
+        <?php include("./inc/generic_footer.php");?>
 </body>
 
 </html>
