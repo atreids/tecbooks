@@ -961,7 +961,41 @@ if(isset($_POST['submit_edit_address'])) {
                 </div>
 
             </div>
-            <div class="tab-pane fade" id="reviews">...</div>
+            <div class="tab-pane fade" id="reviews">
+                <div id="review_deleted_alert" class="alert alert-success w50 d-none">Review Deleted</div>
+                <div class="container-fluid d-flex flex-wrap">
+
+                    <?php
+                $reviews_sql = "SELECT * FROM Reviews JOIN Customers ON Reviews.customer_id = Customers.customer_id JOIN Books ON Reviews.stock_id = Books.stock_id WHERE Customers.customer_id = ".$_SESSION['user_id'].""; 
+                $reviews_result = mysqli_query($db, $reviews_sql);
+                if(mysqli_num_rows($reviews_result) < 1){
+                    echo ' 
+                        <div class="alert alert-warning w50 margin-top" role="alert">
+                            You\'ve not left any reviews yet!
+                        </div>
+                    ';
+                }else {
+                    while($reviews_array = mysqli_fetch_assoc($reviews_result)) {
+                        echo '
+                        <div class="card mr-1 margin-top" style="width:20rem">
+                            <div class="card-header">Review of: '.$reviews_array['title'].'</div>
+                            <div class="card-body">
+                                <p class="card-text">'.$reviews_array['review_text'].'</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">Number of Stars: '.$reviews_array['stars'].'</p>
+                                <button class="btn btn-sm btn-danger" onclick="delete_review('.$reviews_array['review_id'].')">Delete</button>
+                            </div>
+                        </div>
+                    
+                        ';
+                    
+                    }
+                }
+
+            ?>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./js/account.js"></script>

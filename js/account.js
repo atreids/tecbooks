@@ -18,6 +18,24 @@ function change_email() {
   xhttp.send();
 }
 
+function delete_review(review_id) {
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    xhttp = new XMLHttpRequest();
+  } else {
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("review_deleted_alert").className =
+        "alert alert-success w50";
+    }
+  };
+  xhttp.open("POST", "./php/delete_review.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("review_id=" + review_id);
+}
+
 function display_change_email_form() {
   document.getElementById("email_updated_alert").className =
     "alert alert-success w-25 margin-top d-none";
