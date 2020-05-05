@@ -1,17 +1,28 @@
 <?php
 session_start();
-#Redirects if not an admin
-if($_SESSION['login'] != "admin"){
+#Redirects if logged in
+if(!isset($_SESSION['login'])){
     header("location: ./index.php");
 }
 require("./connection.php");
-$customer_id = $_POST['customer_id'];
+require("./password.php");
+
+
+$customer_id = $_SESSION['user_id'];
+$current_password = $_POST['current_password'];
+
+$customer_sql = "SELECT hashed_pass FROM Customers WHERE customer_id = '".$customer_id."'";
+$cust_result = mysqli_query($db, $customer_sql);
+$customer_array = mysqli_fetch_assoc($cust_result);
+
 //Check if they have any orders
 $check_orders = "SELECT order_id FROM Customers_Orders WHERE Customers_Orders.customer_id = ".$customer_id."";
 $orders_result  = mysqli_query($db,$check_orders);
 if(mysqli_num_rows($orders_result) > 0 ){
     echo 'Can\'t delete an account that has orders on it';
-}else {
+}elseif(!password_verify($current_password, $customer_array['hashed_pass'])){ //Checks passwords match
+    echo 'Incorrect password';
+}else { //Deletes account
 //Delete linking address data
 $delete_address ="DELETE FROM Customer_Addresses WHERE Customer_Addresses.customer_id = ".$customer_id."";
 if(!mysqli_query($db,$delete_address)) { 
