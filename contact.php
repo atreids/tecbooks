@@ -14,8 +14,7 @@ require("./php/connection.php");
 
 <body>
     <?php include("./inc/nav.php");?>
-    <div class="container-fluid divider"></div>
-    <div class="container">
+    <div class="container margin-top-lg">
         <h2>Contact Us</h2>
         <div class="row">
             <div class="col-sm">
@@ -23,7 +22,9 @@ require("./php/connection.php");
                 1234 Scotland Row<br>
                 EH7 1HF<br>
                 Edinburgh<br>
-                United Kingdom<br>
+                United Kingdom<br><br>
+                Or by email:<br>
+                ec1823622@edinburghcollege.ac.uk
             </div>
             <div class="col-sm">
                 <iframe

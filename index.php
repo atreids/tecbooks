@@ -14,8 +14,8 @@ include("./php/connection.php");
 
 <body class="d-flex flex-column">
     <?php include("./inc/nav.php");?>
-    <div class="container-fluid parrallax img-2 center-flex lg-height">
-        <div class="center-flex"><span id="lander"><em>Books For The Mind And Soul</em></span></div>
+    <div class="container-fluid parrallax img-1 center-flex lander-height">
+        <div class="center-flex"><span id="lander"><em>TecBooks</em></span></div>
     </div>
     <?php include("./inc/cards.php");?>
 

@@ -14,6 +14,11 @@ body {
     height: 100%;
 }
 
+.cs-nav {
+    background-color: $bg;
+    z-index: 1000;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -31,7 +36,7 @@ input[type=number] {
 
 .divider {
     min-height: 1px;
-    background-color: $blue;
+    background-color: $black;
 }
 
 .margin-top {
@@ -75,8 +80,6 @@ input[type=number] {
     text-decoration: none;
     font-family: "Pacifico", cursive;
     display: block;
-    padding: 10px 20px;
-    font-size: 32px;
     transition: 100ms;
     cursor: pointer;
     color: #000;
@@ -118,13 +121,17 @@ input[type=number] {
     min-height: 60vh;
 }
 
+.lander-height {
+    min-height: 95vh;
+}
+
 .vh-25 {
     max-height: 25vh;
 }
 
 /*parrallax css*/
 .img-1 {
-    background-image: url("../img/bookshelves.jpg");
+    background-image: url("../img/bookshelves2.jpg");
 }
 
 .img-2 {
@@ -135,8 +142,21 @@ input[type=number] {
     background-image: url("../img/reading.jpg")
 }
 
+.img-4 {
+    background-image: url("../img/bookstore2.jpg")
+}
+
 .parrallax {
     width: 100vw;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.fixed-back {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -148,7 +168,7 @@ input[type=number] {
     background: rgba(1, 1, 1, 0.9);
     border: 5px solid #fff;
     font-size: 40px;
-    padding: 40px 40px;
+    padding: 20px 40px;
     color: #fff;
 }
 

@@ -14,10 +14,10 @@ require("./php/connection.php");
 
 <body>
     <?php include("./inc/nav.php");?>
-    <div class="container-fluid divider"></div>
-    <div class="container">
+    <div class="container margin-top-lg margin-bottom">
         <h2>About Tecbooks</h2>
         <p>Tecbooks is an specialist bookstore in technology and educational books for all ages.</p>
+        <img class="img-fluid" src="./img/reading.jpg">
     </div>
 
     <?php include("./inc/generic_footer.php");?>

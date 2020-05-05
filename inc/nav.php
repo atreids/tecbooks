@@ -1,12 +1,4 @@
-<div class="container-fluid top-line">
-
-</div>
-<div class="container-fluid center-flex">
-    <a class="nav-link-l" href="./index.php">
-        <h1 class="logo">TecBooks</h1>
-    </a>
-</div>
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light shadow cs-nav">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -14,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-4 mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./index.php">
+                <a class="nav-link logo navbar-text" href="./index.php">
                     Home
                 </a>
             </li>
