@@ -44,7 +44,7 @@ if($i == 0) {
             <div class="card margin-top ml-5" style="width: 18rem;">
                 <img src="'.$array['cover'].'" class="card-img-top" alt="Book Cover">
                 <div class="card-body">
-                    <h5 class="card-title">'.$array['title'].'</h5>
+                    <a href="./book.php?id='.$array['stock_id'].'"><h5 class="card-title">'.$array['title'].'</h5></a>
                     <h6 class="card-subtitle mb-2 text-muted">'.$array['author'].'</h6>
                     <p class="card-text">£'.$array['product_price'].'</p>
                     <p id="btn_'.$array['stock_id'].'"><button class="btn btn-primary" onclick="loadDocCart('.$array['stock_id'].')">Add to Cart</button></p>
