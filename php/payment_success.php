@@ -25,6 +25,8 @@ if(!mysqli_query($db,$insert)) { //Attemps to insert the data, throws error if i
     }
     $array = mysqli_fetch_assoc($result);
     $order_id = $array['order_id'];
+
+    
     //This code is used to update Customers_Orders_Books table for the new order
     for($x = 0; $x <= sizeof($_SESSION['cart']) - 1; $x = $x + 2) {
         $stock_id = $_SESSION['cart'][$x];

@@ -1,6 +1,14 @@
+<!--
+Developed by Aaron Donaldson.
+For educational purposes.
+contact at ec1823622@edinburghcollege.ac.uk
+
+This is the registration page
+-->
+
 <?php
 require("./php/connection.php"); #Connects to database, $db is connection call
-require("./php/password.php"); #Required for BCRYPT hashing algorithm to function on PHP 5.3.10
+require("./php/password.php"); #Required for BCRYPT hashing algorithm to function on PHP 5.3.10, is not needed past PHP 5.5
 
 #Starting a session is used both if they successfully register and to check that they aren't already logged in
 session_start();
@@ -38,13 +46,15 @@ if(isset($_POST['submit'])) {
     if (mysqli_num_rows($result)>0) { #Checks if resulting row >0, meaning email exists
         header("location: ./register.php?uex=1"); #returns to register with an error
     }elseif (!password_verify($repeatpassword, $pass)) { #Verifying the passwords match
-        header("location: ./register.php?pm=1");
+        header("location: ./register.php?pm=1"); #Returns with error that passwords do not match
     }else {
 
         #Insert customers data into database
         $sql = "INSERT INTO Customers (firstname, surname, hashed_pass, email, user_type) VALUES
         ('$fname','$lname','$pass','$email','0')";
         mysqli_query($db,$sql);
+
+        
         #Check if address exists, if so uses that, if not inserts new address
         $sql_address_id = "SELECT * FROM Addresses WHERE address1 LIKE '".$address1."' AND city LIKE
         '".$city."' AND zip_postcode LIKE '".$zip."' and country LIKE '".$country."' AND address2 LIKE '".$address2."'";
@@ -59,13 +69,13 @@ if(isset($_POST['submit'])) {
             $array = mysqli_fetch_array($result);
             $address_id = $array['address_id'];
         }else {
-            #Get existing address_id
+            #Or get existing address_id
             $array = mysqli_fetch_array($result);
             $address_id = $array['address_id'];
         }
 
         
-        #This code is used to get the new user's customer_id. Used as $_SESSION variable elsewhere
+        #This code is used to get the new user's customer_id. Used as $_SESSION['user_id] variable elsewhere
         $sql_id = "SELECT * FROM Customers WHERE email LIKE '".$email."'";
         $result = mysqli_query($db, $sql_id);
         $array = mysqli_fetch_array($result);
@@ -81,7 +91,7 @@ if(isset($_POST['submit'])) {
         #user_id is customer_id, login is used both to check logged in status and admin status
         #user_name is the customers first name
         $_SESSION['user_id'] = $user_id;
-        $_SESSION['login'] = 'nonadmin';
+        $_SESSION['login'] = 'nonadmin'; #Can either be nonadmin or admin
         $_SESSION['user_name'] = $fname;
         header("location: ./index.php"); #redirects to homepage now that registration is complete
     }
@@ -99,7 +109,7 @@ if(isset($_POST['submit'])) {
 </head>
 
 <body>
-    <!-- nav.php contains navbar and header of page -->
+    <!-- nav.php contains navbar-->
     <?php include("./inc/nav.php");?>
     <!-- small dividing bar below navbar -->
     <div class="container-fluid divider"></div>

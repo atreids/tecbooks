@@ -1,15 +1,24 @@
 <?php
+#Displays a book and it's details to be managed or deleted
+#Called from admin.php through ajax
+
 session_start();
 #Redirects if not an admin
 if($_SESSION['login'] != "admin"){
     header("location: ../index.php");
 }
+
+
 require("./connection.php");
+
+#receives the id of the book and retrieves its details
 $stock_id = $_POST['stock_id'];
 $retrieve_book = "SELECT * FROM Books WHERE stock_id = ".$stock_id."";
 $result = mysqli_query($db,$retrieve_book);
 $array = mysqli_fetch_assoc($result);
 
+#This entire echo response is placed inside a table body on admin.php
+#Includes some buttons that perform calls to functions in admin.js
 echo '
 <tr>
     <td>'.$array['stock_id'].'</td>

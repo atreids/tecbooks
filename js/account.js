@@ -1,4 +1,7 @@
+//Javascript needed for account.php page
+
 function change_email() {
+  //ajax call to change the users email
   var xhttp;
   var new_email = document.getElementById("change_email").value;
   if (window.XMLHttpRequest) {
@@ -19,6 +22,8 @@ function change_email() {
 }
 
 function delete_review(review_id) {
+  //ajax call to delete the user's review
+  //calls delete_review.php
   var xhttp;
   if (window.XMLHttpRequest) {
     xhttp = new XMLHttpRequest();
@@ -37,6 +42,7 @@ function delete_review(review_id) {
 }
 
 function display_change_email_form() {
+  //displays the form to change your email
   document.getElementById("email_updated_alert").className =
     "alert alert-success w-25 margin-top d-none";
   document.getElementById("change_email_form").className = "margin-top";
@@ -46,12 +52,14 @@ function display_change_email_form() {
 }
 
 function change_password_form() {
+  //displays the form to change your password
   document.getElementById("delete_account").className = "margin-top d-none";
   document.getElementById("change_email_form").className = "margin-top d-none";
   document.getElementById("change_password_form").className = "margin-top";
 }
 
 function display_delete_account() {
+  //displays the form to confirm you want to delete your account
   document.getElementById("change_email_form").className = "margin-top d-none";
   document.getElementById("change_password_form").className =
     "margin-top d-none";
@@ -59,6 +67,8 @@ function display_delete_account() {
 }
 
 function delete_account() {
+  //ajax call to delete the user's account, can only be deleted if they have't made any orders
+  //Called delete_customer.php in the php folder
   var current_password = document.getElementById("current_password2").value;
   var xhttp;
   if (window.XMLHttpRequest) {
@@ -81,6 +91,8 @@ function delete_account() {
 }
 
 function change_password() {
+  //ajax call to change the user's password
+  //calls the change_password.php file
   var currentpassword = document.getElementById("current_password").value;
   var new_password = document.getElementById("new_password").value;
   var repeat_new_password = document.getElementById("repeat_new_password")
@@ -114,6 +126,7 @@ function change_password() {
 }
 
 function display_current_addresses() {
+  //displays the user's current addresses
   document.getElementById("current_addresses").className =
     "container-fluid margin-top d-flex flex-row flex-wrap";
   document.getElementById("new_address_form").className =
@@ -121,17 +134,21 @@ function display_current_addresses() {
 }
 
 function display_new_address_form() {
+  //displays a form to add a new address
   document.getElementById("new_address_form").classList.toggle("d-none");
   document.getElementById("current_addresses").className =
     "container-fluid margin-top d-none flex-row flex-wrap";
 }
 
 function display_change_address_form(address_id) {
+  //Displays a form to change an existing address
   document.getElementById("address_id").value = address_id;
   document.getElementById("edit_form").classList.toggle("d-none");
 }
 
 function delete_address(customer_id, address_id) {
+  //performs ajax call to delete a customers address
+  //calls delete_address.php in the php folder
   var xhttp;
   if (window.XMLHttpRequest) {
     xhttp = new XMLHttpRequest();

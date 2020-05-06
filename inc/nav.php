@@ -1,3 +1,4 @@
+<!--this is the navbar for the site -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light shadow cs-nav">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,6 +29,7 @@
         </ul>
         <ul class="navbar-nav mr-4 ml-auto">
             <?php
+            #This php changes what appears on the right hand side of the navbar depending on if they user is logged in or not
                         if(isset($_SESSION['login'])){
                             $cart_number = 0;
                             if(isset($_SESSION['cart']) and !empty($_SESSION['cart'])){

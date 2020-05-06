@@ -30,10 +30,3 @@
     src="https://www.paypal.com/sdk/js?client-id=AcyGNb8WQN4rcN8FigD3HQClEBw2aloCcgL8llfC_35S5gaO4DGTWKIe95Ay82jWNx89MfeSgaxjb-vm&currency=GBP"
     data-sdk-integration-source="button-factory">
 </script>
-
-<?php
-#error reporting, to be removed for prod
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>

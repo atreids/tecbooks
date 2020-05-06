@@ -1,11 +1,19 @@
+<!--
+Developed by Aaron Donaldson.
+For educational purposes.
+contact at ec1823622@edinburghcollege.ac.uk
+-->
+
 <?php
 session_start();
-include("./php/connection.php");
+include("./php/connection.php"); #Includes connection to database, $db is the mysqli link
 
+#Redirects if not logged in
 if(!isset($_SESSION['login'])){
     header("location: ./index.php");
 }
 
+#Unsets the cart if the empty cart button is pressed
 if(isset($_POST['empty_cart'])) {
     unset($_SESSION['cart']);
 }
@@ -15,10 +23,13 @@ if(isset($_POST['empty_cart'])) {
 <html lang="en">
 
 <head>
+
+    <!-- includes necessary meta tags and other data -->
     <?php require("./inc/generic_header.php");?>
 
     <script>
     function remove_item(stock_id) {
+        //Function is called when the trash button is clicked for an item in the cart
         var xhttp;
         if (window.XMLHttpRequest) {
             xhttp = new XMLHttpRequest();
@@ -27,14 +38,17 @@ if(isset($_POST['empty_cart'])) {
         }
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                //Updates cart table with new cart data, including price
                 document.getElementById("table_body").innerHTML = this.responseText;
             }
         };
+        //performs ajax request to remove the specified book from the cart session data 
         xhttp.open("GET", "./php/cart_remove.php?stock_id=" + stock_id, true);
         xhttp.send();
     }
 
     function change_quantity(stock_id, quantity) {
+        //Is called when the quantity of a book is changed
         var xhttp;
         if (window.XMLHttpRequest) {
             xhttp = new XMLHttpRequest();
@@ -43,9 +57,11 @@ if(isset($_POST['empty_cart'])) {
         }
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
+                //Updates cart table with new cart data, including price
                 document.getElementById("total").innerHTML = this.responseText;
             }
         };
+        //performs ajax request to change the quantity of specified book in cart session data
         xhttp.open("GET", "./php/change_quantity.php?stock_id=" + stock_id + "&quantity=" + quantity, true);
         xhttp.send();
     }
@@ -53,14 +69,22 @@ if(isset($_POST['empty_cart'])) {
 </head>
 
 <body>
-    <?php
-        include("./inc/nav.php");
-    ?>
+
+    <!-- Includes the navbar -->
+    <?php include("./inc/nav.php"); ?>
+
+
     <div class="container-fluid divider"></div>
+
+    <!--container containing all cart display -->
     <div class="container-fluid margin-top margin-bottom">
+
+        <!-- Cart title -->
         <div class="row ml-3">
             <h2>Your Cart</h2>
         </div>
+
+        <!-- contains table displaying current cart contents, and the move to checkout buttons -->
         <div class="row">
             <div class="col-sm">
                 <table class="table">
@@ -75,6 +99,7 @@ if(isset($_POST['empty_cart'])) {
                     <tbody id="table_body">
 
                         <?php
+                        #Checks if cart is empty, if so displays a small message saying so, if not displays cart in a table
                     if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
                     echo '
                         <tr>
@@ -86,6 +111,8 @@ if(isset($_POST['empty_cart'])) {
                     ';
                     }else {
                         $total = 0;
+                        #This loop increases by +2 because every second element in the cart array is actually the quantity of the book immediately before it
+                        #So [0] would be the stock_id of the first book in the cart, and [1] would be the quantity of that book
                         for($x = 0; $x <= sizeof($_SESSION['cart']) - 1; $x = $x + 2) {
                             $stock_id = $_SESSION['cart'][$x];
                             $sql = "SELECT * FROM Books WHERE stock_id = ".$stock_id."";
@@ -137,6 +164,8 @@ if(isset($_POST['empty_cart'])) {
                     </tbody>
                 </table>
             </div>
+
+            <!--the move to checkout buttons and empty cart button -->
             <div class="col-sm d-flex flex-column">
                 <?php 
 
@@ -151,9 +180,15 @@ if(isset($_POST['empty_cart'])) {
                 </form>
             </div>
         </div>
+
+
     </div>
+
+
     <!-- Includes universal footer -->
     <?php include("./inc/generic_footer.php");?>
+
+
     <script src="./js/ajax.js"></script>
 
 </body>

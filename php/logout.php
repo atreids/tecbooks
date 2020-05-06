@@ -1,4 +1,7 @@
 <?php
+#Logs the user out
+#Unsets all session data and redirects them to the home page
+
 if(!isset($_SESSION['login'])) {
     header("location: ../index.php");
 }

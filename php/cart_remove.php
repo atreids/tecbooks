@@ -1,11 +1,20 @@
 <?php
+#Used to remove a book from the cart
+#
 session_start();
+#Gets the stock_id of the book to be removed
 $stock_id = $_GET['stock_id'];
 
+#finds the book in the array, unsets it and unsets +1 to remove the quantity
 $key = array_search($stock_id, $_SESSION['cart']);
 unset($_SESSION['cart'][$key]);
 unset($_SESSION['cart'][$key+1]);
+
+#Reorganises cart array so it doesn't have empty indexs in the middle
 $_SESSION['cart'] = array_values($_SESSION['cart']);
+
+
+#This echo returns into the body of the table in cart.php, to display the body again but without the book that was removed
 echo'
     <?php
     if(!isset($_SESSION[\'cart\']) || empty($_SESSION[\'cart\'])) { {

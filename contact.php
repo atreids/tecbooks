@@ -1,6 +1,14 @@
+<!--
+Developed by Aaron Donaldson.
+For educational purposes.
+contact at ec1823622@edinburghcollege.ac.uk
+
+This is the contact page
+-->
+
 <?php
 session_start();
-require("./php/connection.php");
+require("./php/connection.php"); #Includes database connection, $db is the mysqli link
 ?>
 
 <!doctype html>
@@ -9,11 +17,15 @@ require("./php/connection.php");
 <head>
     <?php include("./inc/generic_header.php");?>
 
-    <title>Tecbooks</title>
+    <title>Tecbooks | Contact</title>
 </head>
 
 <body>
+
+    <!-- Includes the navbar -->
     <?php include("./inc/nav.php");?>
+
+    <!--this container contains the company address, and has an embed google iframe showing it on a map -->
     <div class="container margin-top-lg">
         <h2>Contact Us</h2>
         <div class="row">
@@ -36,6 +48,7 @@ require("./php/connection.php");
         </div>
     </div>
 
+    <!-- Some needed <script></script> tags -->
     <?php include("./inc/generic_footer.php");?>
 </body>
 

@@ -1,16 +1,31 @@
+<!--
+Developed by Aaron Donaldson.
+For educational purposes.
+contact at ec1823622@edinburghcollege.ac.uk
+
+This is the admin panel for administrating the websites. 
+This is only accessible if you have logged in as an admin user.
+-->
+
+
 <?php
 session_start();
+
+
 #Redirects if not an admin
 if($_SESSION['login'] != "admin"){
     header("location: ./index.php");
 }
+
+
 require("./php/connection.php"); #Includes connection to database, $db is variable for connection.
 
-#For registering new admin
+
+#Called when the form for registering a new admin is submitted
 if(isset($_POST['submit_admin'])) {
 
     
-    #Variables entered by user
+    #Data entered by admin for the new admin
     $email = $_POST['inputEmail'];
     $fname = $_POST['firstname'];
     $lname = $_POST['lastname'];
@@ -36,15 +51,22 @@ if(isset($_POST['submit_admin'])) {
         header("location: ./register.php?pm=1");
     }else {
 
+        
         #Insert customers data into database
         $sql = "INSERT INTO Customers (firstname, surname, hashed_pass, email, user_type) VALUES
         ('$fname','$lname','$pass','$email','1')";
         mysqli_query($db,$sql);
+
+        
         #Check if address exists, if so uses that, if not inserts new address
         $sql_address_id = "SELECT * FROM Addresses WHERE address1 LIKE '".$address1."' AND city LIKE
         '".$city."' AND zip_postcode LIKE '".$zip."' and country LIKE '".$country."' AND address2 LIKE '".$address2."'";
         $result = mysqli_query($db, $sql_address_id);
+
+        
         if(!mysqli_num_rows($result)>0){
+
+
             #Insert new address
             $sql_address = "INSERT INTO Addresses (address1, address2, city, zip_postcode, country) VALUES
             ('$address1','$address2','$city','$zip','$country')";
@@ -53,14 +75,16 @@ if(isset($_POST['submit_admin'])) {
             $result = mysqli_query($db, $sql_address_id);
             $array = mysqli_fetch_array($result);
             $address_id = $array['address_id'];
+
+            
         }else {
-            #Get existing address_id
+            #Else get existing addresses address_id
             $array = mysqli_fetch_array($result);
             $address_id = $array['address_id'];
         }
 
         
-        #This code is used to get the new user's customer_id. Used as $_SESSION variable elsewhere
+        #This code is used to get the new admin's customer_id. Used here to link that admin to his address
         $sql_id = "SELECT * FROM Customers WHERE email LIKE '".$email."'";
         $result = mysqli_query($db, $sql_id);
         $array = mysqli_fetch_array($result);
@@ -71,6 +95,8 @@ if(isset($_POST['submit_admin'])) {
         $sql_address_link = "INSERT INTO Customer_Addresses (customer_id, address_id) VALUES
         ('$user_id','$address_id')";
         mysqli_query($db,$sql_address_link);
+
+        #Registration of the new admin is now complete
     }
 }
 
@@ -81,19 +107,30 @@ if(isset($_POST['submit_admin'])) {
 <html lang="en">
 
 <head>
+    <!-- includes necessary meta tags and other data -->
     <?php include("./inc/generic_header.php");?>
 
-    <title>Tecbooks</title>
+    <title>Tecbooks | Admin</title>
 </head>
 
 <body class="d-flex flex-column">
+
+    <!-- Includes the navbar -->
     <?php include("./inc/nav.php");?>
+
+    <!-- small dividing line below navbar -->
     <div class="container-fluid divider"></div>
+
+    <!-- container containing the entire admin panel -->
     <div class="container margin-top">
+
+        <!-- displays alert reminding admin that this panel is live and any changes are effectively immediately -->
         <div class="alert alert-danger margin-top center-flex" role="alert">
             <b>Alert:</b> This is the live admin panel. Any changes here will be reflected immediately on the live site!
             Please double check all changes before submission.
         </div>
+
+
         <!--Tabs with different admin actions by grouping -->
         <ul class="nav nav-tabs nav-fill">
             <li class="nav-item">
@@ -106,7 +143,11 @@ if(isset($_POST['submit_admin'])) {
                 <a class="nav-link" data-toggle="tab" href="#admins">Manage Admins</a>
             </li>
         </ul>
+
+        <!-- tabs content -->
         <div class="tab-content">
+
+            <!--content for managing the books on the website -->
             <div class="tab-pane fade show active" id="stock">
                 <div class="container-fluid margin-top">
 
@@ -128,6 +169,8 @@ if(isset($_POST['submit_admin'])) {
                     <div id="book_inserted_alert" class="alert alert-success w-50 margin-top d-none" role="alert">
                         Book Submitted!
                     </div>
+
+                    <!--on submission calls new_book() js function in admin.js -->
                     <form id="new_book_form" class="d-none margin-top" action="javascript:new_book()">
                         <h1 class="h3 mb-3 font-weight-normal">Add New Book</h1>
                         <div class="form-row">
@@ -181,23 +224,34 @@ if(isset($_POST['submit_admin'])) {
                     <!-- Code for managing existing books -->
                     <div class="container-fluid d-none" id="existing_books">
                         <div class="row margin-top">
+
+                            <!-- contains a selector including every book in the database -->
                             <form class="col-sm center-flex w-50">
                                 <label for="selectbook" class="sr-only"></label>
+                                <!-- when a book is selected the display_book() js function in admin.js is called -->
                                 <select id="selectbook" class="form-control" onChange="display_book(this.value)">
                                     <option value="0">Select Book</option>
                                     <?php
                                         $get_books = "SELECT * FROM Books ORDER BY title ASC";
                                         $get_books_result = mysqli_query($db,$get_books);
+                                        #the value of the selector is the books stock_id
                                         while($get_books_array = mysqli_fetch_assoc($get_books_result)) {
                                             echo '<option value='.$get_books_array['stock_id'].'>'.$get_books_array['title'].' // '.$get_books_array['author'].'</option>';
                                         }
                                     ?>
                                 </select>
                             </form>
+
+
                         </div>
+
+                        <!-- Displays alert that the database is successfully been edited after a change has been made, normally not visible -->
                         <div id="book_edited_alert" class="alert alert-success w-50 margin-top d-none" role="alert">
                             Database Edited!
                         </div>
+
+                        <!-- table displaying the books details, by default isn't visible -->
+                        <!-- the buttons to edit or delete books are contained within the ajax php page called from display_book() in admin.js-->
                         <table id="existing_book_table" class="table table-striped margin-top d-none">
                             <thead>
                                 <tr>
@@ -220,11 +274,17 @@ if(isset($_POST['submit_admin'])) {
 
             </div>
 
+            <!-- content for managing exisiting orders on the website -->
             <div class="tab-pane fade" id="orders">
+
+
                 <div class="container-fluid margin-top">
                     <div class="row">
+
+
                         <form class="col-sm center-flex">
                             <label for="selectbook" class="sr-only"></label>
+                            <!-- when a customer is selected the display_customer() js function in admin.js is called -->
                             <select id="selectbook" class="form-control" onChange="display_customer(this.value)">
                                 <option value="0">Select Customer</option>
                                 <?php
@@ -236,36 +296,57 @@ if(isset($_POST['submit_admin'])) {
                                     ?>
                             </select>
                         </form>
+
+
                     </div>
+
+                    <!-- this div is populated with the selected customers orders when a customer is selected -->
+                    <!-- allows admin to update the current delivery status of that customers order -->
                     <div id="customers_orders" class="container-fluid margin-top d-none">
 
                     </div>
                 </div>
+
+
             </div>
 
             <div class="tab-pane fade" id="admins">
+
+
                 <div class="container-fluid margin-top">
                     <div class="row">
+
+
                         <form class="col-sm center-flex">
                             <label for="selectbook" class="sr-only"></label>
+                            <!-- when a admin is selected the display_admin() js function in admin.js is called -->
                             <select id="selectbook" class="form-control" onChange="display_admin(this.value)">
                                 <option value="0">Select Admin</option>
                                 <?php
                                         $get_admins = "SELECT * FROM Customers WHERE user_type = '1' ORDER BY firstname ASC";
                                         $get_admins_result = mysqli_query($db,$get_admins);
+                                        #value of the selector is the admin's customer_id
                                         while($get_admins_array = mysqli_fetch_assoc($get_admins_result)) {
                                             echo '<option value='.$get_admins_array['customer_id'].'>ID: '.$get_admins_array['customer_id'].' Name: '.$get_admins_array['firstname'].' '.$get_admins_array['surname'].'</option>';
                                         }
                                     ?>
                             </select>
                         </form>
+
+                        <!-- button used to display a form to add a new admin, calls js function in admin.js -->
                         <div class="col-sm center-flex">
                             <button class="btn btn-warning" onClick="toggle_new_admin_form()">Add Admin</button>
                         </div>
+
+
                     </div>
+
+                    <!--displays an alert if a admin has successfully been deleted, normally not visible-->
                     <div id="admin_edited_alert" class="alert alert-success w-50 margin-top d-none" role="alert">
                         Admin Deleted!
                     </div>
+
+
                     <div id="existing_admins" class="container-fluid margin-top d-none">
                         <table class="table table-striped">
                             <thead>
@@ -275,6 +356,7 @@ if(isset($_POST['submit_admin'])) {
                                     <th scope="col">Options</th>
                                 </tr>
                             </thead>
+                            <!--this table body is populated with the admins details when the admin is selected-->
                             <tbody id="admin_table_body" class="table-striped">
                             </tbody>
                         </table>
@@ -347,7 +429,11 @@ if(isset($_POST['submit_admin'])) {
                         </form>
                     </div>
                 </div>
+
+                <!--js page contains js specific to the admin page -->
                 <script src="./js/admin.js"></script>
+
+                <!-- just generic js scripts here -->
                 <?php include("./inc/generic_footer.php");?>
 </body>
 

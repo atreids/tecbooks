@@ -1,19 +1,30 @@
 <?php
+#Used to display a customer's orders for managerial reasons on admin.php
+
 session_start();
 #Redirects if not an admin
 if($_SESSION['login'] != "admin"){
     header("location: ../index.php");
 }
+
+
 require("./connection.php");
+
+#Gets customers id and then retreives their order details from database
 $customer_id = $_POST['customer_id'];
 $customers_orders = "SELECT order_id, date_order_placed, order_total FROM Customers_Orders JOIN Customers ON 
 Customers_Orders.customer_id=Customers.customer_id WHERE Customers.customer_id = ".$customer_id." ORDER BY order_id DESC";
 $orderid_result = mysqli_query($db, $customers_orders);
+
+
 if(mysqli_num_rows($orderid_result) < 1){
+    #If they haven't made any orders, echo response
     echo '
     <div class="alert alert-warning w-50 margin-top">This customer has no orders</div>
     ';
 }else {
+    #Else they have made orders, echo response displaying all the orders they've made in a nice card layout
+    #Admins can then change the order status on the card for each order
 while($orderid_array = mysqli_fetch_array($orderid_result)){
     echo '
     <div class="card margin-top">

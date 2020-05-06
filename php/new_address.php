@@ -1,6 +1,18 @@
 <?php 
+#Used to add a new address to an account
+#Called from account.php
+
+
 session_start();
+#redirects if not logged in
+if(!isset($_SESSION['login'])) {
+    header("location: ../index.php");
+}
+
+
 include("./connection.php");
+
+#Retrieves user's ID and new address details
 $user_id = $_SESSION['user_id'];
 $num = $_POST['num'];
 $street = $_POST['street'];
@@ -8,19 +20,25 @@ $city = $_POST['city'];
 $zip = $_POST['zip'];
 $iso = $_POST['iso'];
 $add_type = $_POST['add_type'];
+
+#Sets up sql
 $sql = "INSERT INTO Addresses (building_number,street_name,city,zip_postcode,iso_country_code)
 VALUES ('".$num."','".$street."','".$city."','".$zip."','".$iso."')";
 
+#Performs query
 if(!mysqli_query($db,$sql)) {
     die ('Error: ' .mysqli_error($db));
 } else {
+    #Gets the new addresses id and then links it to the customer
     $sql = "SELECT address_id FROM Addresses ORDER BY address_id DESC LIMIT 1";
     $result = mysqli_query($db,$sql);
     $id = mysqli_fetch_assoc($result);
     $sql = "INSERT INTO customer_addresses VALUES ('".$user_id."','".$id['address_id']."','".$add_type."')";
+
     if(!mysqli_query($db,$sql)) {
         die ('Error: ' .mysqli_error($db));
     } else {
+        #Retrieves customers new full address details and displays them on account.php
         $query = "SELECT building_number, street_name, city, zip_postcode, iso_country_code FROM Addresses 
         JOIN customer_addresses ON Addresses.address_id = customer_addresses.address_id JOIN customers ON customer_addresses.customer_id = customers.customer_id";
         $result = mysqli_query($db,$query);

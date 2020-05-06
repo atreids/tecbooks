@@ -1,13 +1,21 @@
 <?php
+#Called from ajax from browse.php and search.js
+#Used to search for a book by title, author, isbn or tag
+
 session_start();
 require("./connection.php");
-
+#gets the searchterm
 $searchterm = $_POST['searchterm'];
+#array we will store the books that match the search term
 $returned_books_ids = array();
 $sql = "SELECT stock_id, title, author, isbn, tags FROM Books";
 $result = mysqli_query($db, $sql);
+
+#Some variables used in the while loop
 $i = 0;
 $a = 0;
+
+#While loop searchs through all books in the database, trying to match the searchterm exactly to the title, author, isbn or tag
 while($array = mysqli_fetch_array($result)) {
     if($searchterm == $array['title']) {
         $returned_books_ids[$i] = $array['stock_id'];
@@ -30,9 +38,12 @@ while($array = mysqli_fetch_array($result)) {
     }
     $a++;
 }
+
 if($i == 0) {
+    #If nothing matched, echo this response
     echo 'No books were found for that search term';
 }else {
+    #Else for each book found display the book in a nicely formatted card
     foreach($returned_books_ids as $value){
     $sql2 = "SELECT * FROM Books WHERE stock_id = ".$value."";
     $data =  mysqli_query($db, $sql2);

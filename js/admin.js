@@ -6,6 +6,7 @@
 //
 //
 function toggle_existing_books() {
+  //displays existing books
   document.getElementById("existing_books").classList.toggle("d-none");
   document.getElementById("book_edited_alert").className =
     "alert alert-success w-50 margin-top d-none";
@@ -15,6 +16,7 @@ function toggle_existing_books() {
 }
 
 function toggle_new_admin_form() {
+  //toggles form to add a new admin
   document.getElementById("new_admin_form").classList.toggle("d-none");
   document.getElementById("existing_admins").className =
     "container-fluid margin-top d-none";

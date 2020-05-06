@@ -1,4 +1,6 @@
 <?php
+//This page is used to display the books on the index.php page
+
 $sql = "SELECT * FROM Books";
 $data = mysqli_query($db, $sql);
 if (!$data) {
@@ -20,6 +22,7 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_tags[$a] = $array['tags'];
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
+                #Displays books matching the tag Math
                 if(in_array("Math", $array_of_current_books_tags)) {
                     echo '
                     
@@ -48,6 +51,7 @@ $data2 = mysqli_query($db, $sql);
                 $array_of_tags[$a] = $array2['tags'];
                 $current_book_tags_string = $array_of_tags[$a];
                 $array_of_current_books_tags = explode(",", $current_book_tags_string);
+                #Displays books matching the tag ComputerScience
                 if(in_array("ComputerScience", $array_of_current_books_tags)) {
                     echo '
                     

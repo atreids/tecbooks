@@ -1,3 +1,11 @@
+<!--
+Developed by Aaron Donaldson.
+For educational purposes.
+contact at ec1823622@edinburghcollege.ac.uk
+
+This is the user's account page, allows them to manage their account
+-->
+
 <?php
 session_start();
 require("./php/connection.php");
@@ -43,7 +51,7 @@ if(isset($_POST['submit_address'])) {
 
 #This code processes when edit address form is submitted.
 #Doesn't actually edit the existing address, instead it cuts the link between the customer and that address
-#and then makes a new address. This is just incase two customers live at the same address and one of them moves
+#and then makes a new address for the customer. This is just incase two customers live at the same address and one of them moves
 if(isset($_POST['submit_edit_address'])) {
 
     
@@ -97,15 +105,24 @@ if(isset($_POST['submit_edit_address'])) {
 <html lang="en">
 
 <head>
+    <!-- includes necessary meta tags and other data -->
     <?php include("./inc/generic_header.php");?>
 
-    <title>Tecbooks</title>
+    <title>Tecbooks | <?php echo $_SESSION['fname']; ?></title>
 </head>
 
 <body class="d-flex flex-column">
+
+    <!-- Includes the navbar -->
     <?php include("./inc/nav.php");?>
+
+
     <div class="container-fluid divider"></div>
+
+
     <div class="container margin-top">
+
+        <!-- tabs seperating account management into different sections-->
         <ul class="nav nav-tabs nav-fill">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#details">Your
@@ -121,9 +138,16 @@ if(isset($_POST['submit_edit_address'])) {
                 <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
             </li>
         </ul>
+
+        <!-- contains the different tabs contents, only the content of the currently selected tab is visible to the user -->
         <div class="tab-content">
+
+            <!-- contents for the user managing general account details like email, changing password or deleting their account -->
             <div class="tab-pane fade show active" id="details">
+
+
                 <?php
+                    #Php to get the users details from the database
                     $sql = "SELECT * FROM Customers WHERE customer_id = ".$_SESSION['user_id']."";
                     if(!mysqli_query($db,$sql)) {
                         die ('Error: ' .mysqli_error($db));
@@ -135,15 +159,24 @@ if(isset($_POST['submit_edit_address'])) {
                         $email = $array['email'];
                     }
                 ?>
+
+
                 <h3 class="margin-top">Your Details:</h3>
+
+                <!--generic information -->
                 <p>Name: <?php echo $firstname." ".$lastname;?></p>
                 <p>Email: <?php echo $email ?></p>
+
+                <!-- buttons to perform different actions, all js is on account.js page -->
                 <button class="btn btn-primary btn-sm" onClick="display_change_email_form()">Change Email</button>
                 <button class="btn btn-warning btn-sm" onClick="change_password_form()">Change Password</button>
                 <button class="btn btn-danger btn-sm" onClick="display_delete_account()">Delete Account</button>
+
+                <!--alert is populated with ajax response data depending on what action was performed, normally not visible -->
                 <div id="details_alert" class="alert alert-warning w-25 margin-top d-none" role="alert">
                 </div>
 
+                <!-- form to change the user's password, js is on account.js page -->
                 <div id="change_password_form" class="margin-top d-none">
                     <div class="form-group w-25">
                         <label for="current_password" class="sr-only">Input Current Password</label>
@@ -162,6 +195,7 @@ if(isset($_POST['submit_edit_address'])) {
                     </div>
                 </div>
 
+                <!-- confirmation form for deleting the account and also calls the delete_account js function in account.js -->
                 <div id="delete_account" class="margin-top d-none">
                     <div class="form-group w-25">
                         <label for="current_password2">Enter current password to delete account</label>
@@ -173,7 +207,7 @@ if(isset($_POST['submit_edit_address'])) {
                     </div>
                 </div>
 
-
+                <!--form for changing the user's email address, again calls account.js function -->
                 <div id="change_email_form" class="margin-top d-none">
                     <div class="form-row">
                         <div class="form-group w-25">
@@ -186,6 +220,8 @@ if(isset($_POST['submit_edit_address'])) {
                         </div>
                     </div>
                 </div>
+
+                <!--alert specific to when the email is successfully updated, normally not visible -->
                 <div id="email_updated_alert" class="alert alert-success w-25 margin-top d-none" role="alert">
                     Email Updated!
                 </div>
@@ -193,7 +229,7 @@ if(isset($_POST['submit_edit_address'])) {
 
 
 
-                <!--cute message-->
+                <!--cute message from dr. seuss-->
                 <div class="container margin-top-lg margin-bottom">
                     <div class="row">
                         <div class="col-sm center-flex flex-column">
@@ -213,8 +249,15 @@ if(isset($_POST['submit_edit_address'])) {
                         </div>
                     </div>
                 </div>
+
+
             </div>
+
+            <!-- content for user managing their addresses linked to their account -->
             <div class="tab-pane fade" id="addresses">
+
+                <!-- buttons to view their existing addresses or to add a new one -->
+                <!-- js calls are to account.js -->
                 <div class="container-fluid margin-top">
                     <div class="row">
                         <div class="col-sm center-flex">
@@ -230,7 +273,7 @@ if(isset($_POST['submit_edit_address'])) {
 
 
                 <?php
-                #code outputs exisiting addresses in some nicely formatted cards
+                #code outputs exisiting addresses in some nicely formatted cards, displayed when the display_current_address() js function is called in account.js
                     $sql = "SELECT * FROM Addresses JOIN Customer_Addresses ON Addresses.address_id = Customer_Addresses.address_id
                     JOIN Customers ON Customer_Addresses.customer_id = Customers.customer_id WHERE Customers.customer_id = ".$_SESSION['user_id']."";
                     if(!mysqli_query($db,$sql)) {
@@ -240,6 +283,7 @@ if(isset($_POST['submit_edit_address'])) {
                         
                     }
                     if(mysqli_num_rows($result) < 1) {
+                        #displays an alert that the user doesn't have any registered addresses
                         echo '
                             <div class="alert alert-warning w-50 margin-top">
                                 This User Has No Addresses
@@ -287,7 +331,10 @@ if(isset($_POST['submit_edit_address'])) {
                     echo '</div>';
                 };
                 ?>
-                <!--form to edit an existing address -->
+
+
+                <!--form to edit an existing address, calls js function in account.js -->
+
                 <div class="container-fluid margin-top d-none" id="edit_form">
                     <form action="" method="post">
                         <h1 class="h3 mb-3 font-weight-normal">Edit Address</h1>
@@ -595,7 +642,7 @@ if(isset($_POST['submit_edit_address'])) {
                 </div>
 
 
-                <!-- Form to add a new address-->
+                <!-- Form to add a new address, calls js function in account.js-->
                 <div class="container-fluid margin-top d-none" id="new_address_form">
                     <form action="" method="post">
                         <h1 class="h3 mb-3 font-weight-normal">Add Address</h1>
@@ -902,11 +949,16 @@ if(isset($_POST['submit_edit_address'])) {
                 </div>
             </div>
 
+            <!--contents for user to view their order history -->
             <div class="tab-pane fade" id="history">
                 <?php
+                #Displays customers orders in some nicely formatted cards
                 $customers_orders = "SELECT order_id, date_order_placed, order_total, order_status FROM Customers_Orders JOIN Customers ON 
                 Customers_Orders.customer_id=Customers.customer_id WHERE Customers.customer_id = ".$_SESSION['user_id']." ORDER BY order_id DESC";
                 $orderid_result = mysqli_query($db, $customers_orders);
+
+                #Loop to display multiple cards, one for each order
+                #Has a loop inside it because of order data and book data being so far apart 
                 while($orderid_array = mysqli_fetch_array($orderid_result)){
                     echo '
                     <div class="card margin-top">
@@ -916,7 +968,7 @@ if(isset($_POST['submit_edit_address'])) {
                     </div>
                     <ul class="list-group list-group-flush">
                     ';
-  
+                    #Gets the individual book details and their quantity on the order
                     $sql_orderdata = "SELECT * FROM Books JOIN Customer_Orders_Books ON Books.stock_id = Customer_Orders_Books.stock_id
                     JOIN Customers_Orders ON Customer_Orders_Books.order_id = Customers_Orders.order_id JOIN Customers ON 
                     Customers_Orders.customer_id=Customers.customer_id WHERE Customers.customer_id = ".$_SESSION['user_id']." AND Customers_Orders.order_id = ".$orderid_array['order_id']."";
@@ -948,6 +1000,7 @@ if(isset($_POST['submit_edit_address'])) {
                 }
                 ?>
 
+                <!--displays a cute helpful message to the user -->
                 <div class="card margin-top">
                     <div class=" card-header">
                         Have a problem with an order?
@@ -961,11 +1014,19 @@ if(isset($_POST['submit_edit_address'])) {
                 </div>
 
             </div>
+
+            <!--contents for user to view and manage their reviews -->
             <div class="tab-pane fade" id="reviews">
+
+                <!-- alert for successfully deleting a review, is normally not visible -->
                 <div id="review_deleted_alert" class="alert alert-success w50 d-none">Review Deleted</div>
+
+                <!-- container containing reviews -->
                 <div class="container-fluid d-flex flex-wrap">
 
                     <?php
+                    #php code displays user's reviews in some nicely formatted cards
+                    #delete button calls js function in account.js called delete_review with the reviews unique id
                 $reviews_sql = "SELECT * FROM Reviews JOIN Customers ON Reviews.customer_id = Customers.customer_id JOIN Books ON Reviews.stock_id = Books.stock_id WHERE Customers.customer_id = ".$_SESSION['user_id'].""; 
                 $reviews_result = mysqli_query($db, $reviews_sql);
                 if(mysqli_num_rows($reviews_result) < 1){
@@ -998,7 +1059,11 @@ if(isset($_POST['submit_edit_address'])) {
             </div>
         </div>
     </div>
+
+    <!-- very important script file that manages almost every action on the account page -->
     <script src="./js/account.js"></script>
+
+    <!-- Some needed <script></script> tags, mainly for bootstrap stuff -->
     <?php include("./inc/generic_footer.php");?>
 </body>
 

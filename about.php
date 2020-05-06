@@ -1,15 +1,24 @@
+<!--
+Developed by Aaron Donaldson.
+For educational purposes.
+contact at ec1823622@edinburghcollege.ac.uk
+
+
+This is just a small about page for Tecbooks
+-->
 <?php
 session_start();
-require("./php/connection.php");
+require("./php/connection.php"); #Connection to database, $db is linking variable
 ?>
 
 <!doctype html>
 <html lang="en">
 
 <head>
+    <!--generic header contains all regular meta information and other info needed on every page-->
     <?php include("./inc/generic_header.php");?>
 
-    <title>Tecbooks</title>
+    <title>Tecbooks | About</title>
 </head>
 
 <body>

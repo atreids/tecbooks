@@ -1,8 +1,0 @@
-change iso database to not int
-
-add adding payment methods
-
-add deleting addresses
-
-add deleting accounts
-
